@@ -1,0 +1,32 @@
+{
+  "name": "thought_shower_app",
+  "version": "1.0.0",
+  "description": "A forum like web app where users can anonymously submit, like, and comment on ideas for startups in various fields.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IntegerZeroSF/Thought_Shower.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IntegerZeroSF/Thought_Shower/issues"
+  },
+  "homepage": "https://github.com/IntegerZeroSF/Thought_Shower#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mocha": "^7.0.0",
+    "mongoose": "^5.8.9",
+    "supertest": "^4.0.2"
+  },
+  "engines": {
+    "node": "v13.1.0"
+  },
+}

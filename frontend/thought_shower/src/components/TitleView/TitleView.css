@@ -1,0 +1,95 @@
+.container {
+    width: 500px;
+    height: 180px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 0 10px;
+    line-height: 10px;
+}
+
+.view-details {
+    width: 200px;
+    background-color: rgb(220, 220, 220);
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.view-details:hover {
+    cursor: pointer;
+}
+
+.button-container {
+    margin-top: 15px;
+    width: 100%;
+    text-align: right; 
+}
+
+.like-count {
+    font-size: 25px;
+    margin: 5px;
+}
+
+.green {
+    color: rgb(50, 255, 50);
+}
+
+.black {
+    color: black;
+}
+
+.red {
+    color: rgb(255, 65, 65);
+}
+
+.like {
+    height: 20px;
+    width: 20px;
+}
+
+.like-button {
+    border: none;
+    border-radius: 100px;
+    margin: 5px;
+}
+
+.like-button:hover {
+    cursor: pointer;
+}
+
+.upvote {
+    background-color: rgb(220, 255, 220);
+}
+
+.upvote-selected {
+    background-color: rgb(50, 255, 50);
+}
+
+.downvote {
+    background-color: rgb(255, 220, 220);
+}
+
+.downvote-selected {
+    background-color: rgb(255, 65, 65);
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 300px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .view-details {
+        width: 150px;
+    }
+}

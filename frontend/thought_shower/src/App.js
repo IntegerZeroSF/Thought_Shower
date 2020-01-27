@@ -2,10 +2,12 @@ import React from 'react';
 import './App.css';
 
 import Home from './components/Home/Home.js'
+import Header from './components/Header/Header.js'
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <Home />
     </div>
   );

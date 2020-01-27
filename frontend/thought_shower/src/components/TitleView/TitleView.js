@@ -1,4 +1,6 @@
 import React from 'react'
+import './TitleView.css'
+
 const axios = require('axios').default;
 const URL = 'https://thought-shower.herokuapp.com'
 
@@ -20,16 +22,23 @@ export default class TitleView extends React.Component {
             .catch(err => console.log(err))
     }
     render() {
-        const ideas = this.state.ideas.map(arr => (
-            <div>
-                <h1>{arr.title}</h1>
-                <h2>{arr.category}</h2>
-                <button>View Details</button>
-            </div>
-        ))
+        const ideas = this.state.ideas.map(arr => {
+            const color = arr.likes >= 0 ? (arr.likes > 0 ? "green" : "black") : "red"
+            return (
+                <div className="container">
+                    <h1 style={{textAlign: "left"}}>{arr.title}</h1>
+                    <h2 style={{textAlign: "left"}}>{arr.category}</h2>
+                    <button className='view-details'>View Details</button>
+                    <div className='button-container'>
+                        <span className={'like-count ' + color}>{arr.likes}</span>
+                        <button className="like-button upvote"><img src='thumbs_up.png' className='like'/></button>
+                        <button className="like-button downvote"><img src='thumbs_down.png' className='like'/></button>
+                    </div>
+                </div>
+            )
+        })
         return (
             <div>
-                <p>from title view</p>
                 {ideas}
             </div>
         )

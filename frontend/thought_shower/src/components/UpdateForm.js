@@ -25,14 +25,14 @@ function UpdateForm(props) {
   const handleSubmit = e => {
     e.preventDefault();
 
-    const Idea = {
+    const idea = {
       title: title,
       category: category,
       post: post,
       
     };
 
-    props.updateIdea(Idea);
+    props.updateIdea(idea);
   };
   return (
     <div className={showHideClassName}>

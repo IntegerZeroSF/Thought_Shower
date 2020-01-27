@@ -85,17 +85,17 @@ function App() {
     });
   }
 
-  const updateIdea = title => {
-    let dataUrl1=dataUrl+"title/"+title
+  const updateIdea = idea => {
+    let dataUrl1=dataUrl+"title/"+idea.title
     console.log(dataUrl1)
-    fetch(dataUrl)
+    fetch(dataUrl1)
     .then(res => res.json())
     .then(data => {
-      console.log(data._id);
+      console.log(data);
  
     let dataUrl2=dataUrl+"id/"+data._id
     fetch((dataUrl2), {
-      body: JSON.stringify(),
+      body: JSON.stringify(idea),
       method: "put",
       headers: {
         Accept: "application/json, text/plain, */*",

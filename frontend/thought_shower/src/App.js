@@ -40,8 +40,8 @@ function App() {
     useEffect(() => {
       fetch(dataUrl)
         .then(res => res.json())
-        .then(data => {
-          setData(data);
+        .then(ideaData => {
+          setData(ideaData);
         })
         .catch(err => {
           console.log(err);
@@ -63,12 +63,12 @@ function App() {
     const deleteIdea = title => {
       let dataUrl1=dataUrl+"title/"+title
       console.log(dataUrl1)
-      fetch(dataUrl)
+      fetch(dataUrl1)
       .then(res => res.json())
-      .then(data => {
-        console.log(data._id);
+      .then(ideaData => {
+        console.log(ideaData);
    
-      let dataUrl2=dataUrl+"id/"+data._id
+      let dataUrl2=dataUrl+"id/"+ideaData._id
       fetch((dataUrl2), {
         body: JSON.stringify(),
         method: "delete",
@@ -77,7 +77,8 @@ function App() {
           "Content-Type": "application/json"
         }
       }).then(deleteIdea => deleteIdea.json());
-      //  data.push(Recipe)
+        data.pop(ideaData.id)
+        console.log(data)
       
        })
     .catch(err => {
@@ -90,10 +91,10 @@ function App() {
     console.log(dataUrl1)
     fetch(dataUrl1)
     .then(res => res.json())
-    .then(data => {
-      console.log(data);
+    .then(ideaData => {
+      console.log(ideaData);
  
-    let dataUrl2=dataUrl+"id/"+data._id
+    let dataUrl2=dataUrl+"id/"+ideaData._id
     fetch((dataUrl2), {
       body: JSON.stringify(idea),
       method: "put",
@@ -102,7 +103,22 @@ function App() {
         "Content-Type": "application/json"
       }
     }).then(updateIdea => updateIdea.json());
-    //  data.push(Recipe)
+      console.log(data)
+        let n = data.indexOf(`_id=ideaData._id`)
+        console.log(n)
+        // data[n].category = idea.category
+
+
+
+        data.forEach((item)=>{
+        if(item._id === ideaData._id){
+          console.log(item)
+          data.category = idea.category
+          console.log(idea.category)
+        }
+       
+      })
+      console.log(data)
     
      })
   .catch(err => {

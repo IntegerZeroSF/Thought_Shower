@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./UpdateForm.css";
 
 function UpdateForm(props) {
-  let [title, setTitle] = useState();
-  let [category, setCategory] = useState();
-  let [post, setPost] = useState();
+  let [title, setTitle] = useState("");
+  let [category, setCategory] = useState("");
+  let [post, setPost] = useState("");
   let [search, setSearch] = useState();
 
   const showHideClassName = props.showUpdate
@@ -39,6 +39,10 @@ function UpdateForm(props) {
     };
 
     props.updateIdea(idea);
+
+    setTitle("")
+    setCategory("")
+    setPost("")
   };
 
   const handleSearch = e => {

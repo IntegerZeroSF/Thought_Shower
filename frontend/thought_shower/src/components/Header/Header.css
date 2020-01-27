@@ -8,12 +8,14 @@
     background: #42A5F5;
     padding: 2vh 0 0 0;
     border-bottom: 2px solid #296596;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
     
 }
 
 .navTitle {
     margin: 0px 30px;  
     padding-left: 20px;
+    font-size: 2rem;
 }
 
 .navItem {
@@ -40,7 +42,8 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    padding: 20px 0;
+    margin-top: 5px;
+    /* border-bottom: 2px solid #f9f9f9 */
 }
 
 .dropdown:hover .dropdownContent {
@@ -53,4 +56,9 @@
     text-decoration: none;
     display: block;
     text-align: left;
+}
+
+.dropdownLink:hover {
+    background: #42A5F5;
+    border-bottom: 2px solid #296596
 }

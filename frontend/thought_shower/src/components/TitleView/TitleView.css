@@ -1,5 +1,5 @@
 .container {
-    width: 400px;
+    width: 500px;
     height: 180px;
     border: 2px solid black;
     border-radius: 10px;
@@ -9,7 +9,8 @@
 }
 
 .view-details {
-    width: 150px;
+    width: 200px;
+    background-color: rgb(220, 220, 220);
     height: 40px;
     border: 2px solid black;
     border-radius: 10px;
@@ -72,4 +73,23 @@
 
 .downvote-selected {
     background-color: rgb(255, 65, 65);
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 300px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .view-details {
+        width: 150px;
+    }
 }

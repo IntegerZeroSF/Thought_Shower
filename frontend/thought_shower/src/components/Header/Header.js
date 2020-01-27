@@ -9,9 +9,15 @@ function Header() {
             <nav className="nav">
                 <div className="navTitle">Thought Shower</div>
                 <ul className="navList">
-                    <li className="navItem">Services</li>
+                    <li className="dropdown">Search
+                        <div className="dropdownContent">
+                            <div className="dropdownLink">Sample 1</div>
+                            <div className="dropdownLink">Sample 2</div>
+                            <div className="dropdownLink">Sample 3</div>
+                        </div>
+                    </li>
                     <li className="navItem">About Us</li>
-                    <li className="navItem">Blog</li>
+                    <li className="navItem"></li>
                 </ul>
             </nav>
         </div>

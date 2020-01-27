@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./InputForm.css";
 
 function InputForm(props) {
   let [title, setTitle] = useState();
@@ -58,13 +59,15 @@ function InputForm(props) {
             ></input>
           </div>
           <div>
-            <input
-              className="input"
+            <textarea
+              className="input description"
               value={post}
               type="text"
               placeholder="Description"
               onChange={e => handleChangePost(e)}
-            ></input>
+              // rows = "40"
+              // columns = "60"
+            ></textarea>
           </div>
           
           <div>

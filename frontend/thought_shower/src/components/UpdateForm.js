@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./UpdateForm.css";
 
 function UpdateForm(props) {
   let [title, setTitle] = useState();
@@ -58,13 +59,13 @@ function UpdateForm(props) {
             ></input>
           </div>
           <div>
-            <input
-              className="input"
+            <textarea
+              className="input description"
               value={post}
               type="text"
               placeholder="Description"
               onChange={e => handleChangePost(e)}
-            ></input>
+            ></textarea>
           </div>
           
           <div>

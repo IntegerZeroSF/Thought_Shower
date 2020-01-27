@@ -1,0 +1,21 @@
+.updateform {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  border: 2px solid green;
+}
+
+.input {
+  border: 2px solid orange;
+  font-weight: bold;
+  width: 80%;
+  padding: 10px;
+  text-align: top;
+}
+
+.description {
+  height: 400px;
+  word-wrap: break-word;
+  word-break: break-all;
+}

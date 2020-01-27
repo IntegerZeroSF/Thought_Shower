@@ -2,8 +2,7 @@ import React, { useState } from "react";
 
 function DeleteForm(props) {
   let [title, setTitle] = useState();
-  
-  
+
   const showHideClassName = props.showDelete
     ? "modal display-block"
     : "modal display-none";
@@ -12,12 +11,11 @@ function DeleteForm(props) {
     e.preventDefault();
     setTitle(e.target.value);
   };
-  
-  
+
   const handleSubmit = e => {
     e.preventDefault();
 
-     props.deleteIdea(title);
+    props.deleteIdea(title);
   };
   return (
     <div className={showHideClassName}>
@@ -33,7 +31,7 @@ function DeleteForm(props) {
               onChange={e => handleChangeTitle(e)}
             ></input>
           </div>
-                 
+
           <div>
             <button className="sumbitbtn">Submit</button>
           </div>

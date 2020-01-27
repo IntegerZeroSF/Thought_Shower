@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./UpdateForm.css";
+import "./InputForm.css";
 
-function UpdateForm(props) {
+function InputForm(props) {
   let [title, setTitle] = useState();
   let [category, setCategory] = useState();
   let [post, setPost] = useState();
-  
-  const showHideClassName = props.showUpdate
+
+  const showHideClassName = props.showInput
     ? "modal display-block"
     : "modal display-none";
 
@@ -22,24 +22,23 @@ function UpdateForm(props) {
     e.preventDefault();
     setPost(e.target.value);
   };
-  
+
   const handleSubmit = e => {
     e.preventDefault();
 
-    const idea = {
+    const Idea = {
       title: title,
       category: category,
-      post: post,
-      
+      post: post
     };
 
-    props.updateIdea(idea);
+    props.createIdea(Idea);
   };
   return (
     <div className={showHideClassName}>
       <section className="modal-main">
-        <div className="modalhead">Update an Idea!</div>
-        <form className="updateform" onSubmit={e => handleSubmit(e)}>
+        <div className="modalhead">Create a New Idea!</div>
+        <form className="inputform" onSubmit={e => handleSubmit(e)}>
           <div>
             <input
               className="input"
@@ -65,14 +64,16 @@ function UpdateForm(props) {
               type="text"
               placeholder="Description"
               onChange={e => handleChangePost(e)}
+              // rows = "40"
+              // columns = "60"
             ></textarea>
           </div>
-          
+
           <div>
             <button className="sumbitbtn">Submit</button>
           </div>
         </form>
-        <button onClick={props.hideUpdateModal} className="closebtn">
+        <button onClick={props.hideInputModal} className="closebtn">
           close
         </button>
       </section>
@@ -80,4 +81,4 @@ function UpdateForm(props) {
   );
 }
 
-export default UpdateForm;
+export default InputForm;

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import "./InputForm.css";
+import "./UpdateForm.css";
 
-function InputForm(props) {
+function UpdateForm(props) {
   let [title, setTitle] = useState();
   let [category, setCategory] = useState();
   let [post, setPost] = useState();
-  
-  const showHideClassName = props.showInput
+  let [search, setSearch] = useState();
+
+  const showHideClassName = props.showUpdate
     ? "modal display-block"
     : "modal display-none";
 
@@ -22,24 +23,62 @@ function InputForm(props) {
     e.preventDefault();
     setPost(e.target.value);
   };
-  
+
+  const handleChangeSearch = e => {
+    e.preventDefault();
+    setSearch(e.target.value);
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
 
-    const Idea = {
+    const idea = {
       title: title,
       category: category,
-      post: post,
-      
+      post: post
     };
 
-    props.createIdea(Idea);
+    props.updateIdea(idea);
   };
+
+  const handleSearch = e => {
+    e.preventDefault();
+    console.log(search)
+    console.log(props.data)
+    props.data.map((item) => {
+      if(item.title === search){
+        console.log(item)
+        setTitle(item.title)
+        setCategory(item.category)
+        setPost(item.post)
+      }
+    }
+    )
+    
+  };
+
+
   return (
     <div className={showHideClassName}>
       <section className="modal-main">
-        <div className="modalhead">Create a New Idea!</div>
-        <form className="inputform" onSubmit={e => handleSubmit(e)}>
+      <form className="updateform" onSubmit={e => handleSearch(e)}>
+          <div>
+            <input
+              className="input"
+              value={search}
+              type="text"
+              placeholder="Idea Name"
+              onChange={e => handleChangeSearch(e)}
+            ></input>
+          </div>
+           <div>
+            <button className="sumbitbtn">Search</button>
+          </div>
+ 
+ 
+        </form>
+        <div className="modalhead">Update an Idea!</div>
+        <form className="updateform" onSubmit={e => handleSubmit(e)}>
           <div>
             <input
               className="input"
@@ -65,16 +104,14 @@ function InputForm(props) {
               type="text"
               placeholder="Description"
               onChange={e => handleChangePost(e)}
-              // rows = "40"
-              // columns = "60"
             ></textarea>
           </div>
-          
+
           <div>
             <button className="sumbitbtn">Submit</button>
           </div>
         </form>
-        <button onClick={props.hideInputModal} className="closebtn">
+        <button onClick={props.hideUpdateModal} className="closebtn">
           close
         </button>
       </section>
@@ -82,4 +119,4 @@ function InputForm(props) {
   );
 }
 
-export default InputForm;
+export default UpdateForm;

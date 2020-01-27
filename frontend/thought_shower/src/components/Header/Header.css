@@ -1,0 +1,31 @@
+.nav {
+	position: sticky;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 60px;
+    top: 0;
+    background: #42A5F5;
+    padding: 2vh 0 0 0;
+    
+}
+
+.subnav {
+	position: sticky;
+	bottom: 0;
+	top: 60px;
+}
+
+
+.navTitle {
+	background: #42A5F5;
+    margin: 0px 30px;  
+    padding-left: 20px;
+}
+
+
+
+.navItem {
+    display: inline-block;
+    margin: 0px 30px;
+}

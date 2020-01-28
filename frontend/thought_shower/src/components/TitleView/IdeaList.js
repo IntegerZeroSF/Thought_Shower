@@ -6,7 +6,7 @@ import UpdateBtn from "../Update/UpdateBtn"
 // const axios = require('axios').default;
 // const URL = 'https://thought-shower.herokuapp.com'
 
-function TitleView(props) {
+function IdeaList(props) {
     let [showIdea, setShowIdea] = useState(false);
   if (props.data) {
     
@@ -29,7 +29,6 @@ function TitleView(props) {
           <UpdateBtn data={props.data}
                     updateIdea={props.updateIdea}/>
           <DeleteBtn deleteIdea={props.deleteIdea}/>
-          
           <div className="button-container">
             <span className={"like-count " + color}>{arr.likes}</span>
             <button className="like-button upvote">
@@ -48,4 +47,4 @@ function TitleView(props) {
     return <></>;
   }
 }
-export default TitleView;
+export default IdeaList;

@@ -3,7 +3,7 @@ import "./Header.css";
 import CreateBtn from "../Create/CreateBtn";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header(props) {
   return (
     <div className="headerBody">
       <nav className="nav">
@@ -14,7 +14,7 @@ function Header() {
         <ul className="navList">
           <li className="navItem">Home</li>
           <li className="navItem">
-            <CreateBtn />
+            <CreateBtn createIdea={props.createIdea}/>
           </li>
           <li className="dropdown">
             Search

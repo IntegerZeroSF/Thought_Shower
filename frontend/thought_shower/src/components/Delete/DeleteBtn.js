@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../Header/Header.css";
-import DeleteForm from "../Delete/DeleteForm";
+import DeleteForm from "./DeleteForm";
 
-function DeleteBtn() {
+function DeleteBtn(props) {
   let [showDelete, setShowDelete] = useState(false);
 
   const showDeleteModal = () => {
@@ -17,7 +17,7 @@ function DeleteBtn() {
             <DeleteForm
               showDelete={showDelete}
               hideDeleteModal={hideDeleteModal}
-              deleteIdea={deleteIdea}
+              deleteIdea={props.deleteIdea}
             >
               <p>Modal</p>
             </DeleteForm>

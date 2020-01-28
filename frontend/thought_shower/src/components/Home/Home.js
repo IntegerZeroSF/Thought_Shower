@@ -3,7 +3,7 @@ import "./Home.css";
 import TitleView from "../TitleView/TitleView";
 import { Link } from "react-router-dom";
 
-function Home() {
+function Home(props) {
   return (
     <div className="homeBody">
       <div className="intro">

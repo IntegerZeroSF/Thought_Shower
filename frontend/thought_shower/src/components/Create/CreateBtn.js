@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Header/Header.css";
 import InputForm from "../Create/InputForm";
 
-function CreateBtn() {
+function CreateBtn(props) {
   let [showInput, setShowInput] = useState(false);
   const showInputModal = () => {
     setShowInput(true);
@@ -17,7 +17,7 @@ function CreateBtn() {
         <InputForm
           showInput={showInput}
           hideInputModal={hideInputModal}
-          // createIdea={createIdea}
+          createIdea={props.createIdea}
         >
           <p>Modal</p>
         </InputForm>

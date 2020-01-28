@@ -1,10 +1,15 @@
-import React, { useState }from 'react'
+import React, { useState }from 'react';
+import DeleteBtn from "../Delete/DeleteBtn"
+
+
 
 function IdeaUpdate(props){
 
   let [title, setTitle] = useState();
     let [category, setCategory] = useState();
     let [post, setPost] = useState();
+
+    
   
     const showHideClassName = props.showInput
       ? "modal display-block"
@@ -29,22 +34,14 @@ function IdeaUpdate(props){
         post: post
       };
   
-      props.createIdea(Idea);
+      props.updateIdea(Idea);
     };
+
     return (
       <div className={showHideClassName}>
         <section className="modal-main">
           <div className="modalhead">hi</div>
-          <form className="inputform" onSubmit={e => handleSubmit(e)}>
-            {/* <div>
-              <input
-                className="input"
-                value={title}
-                type="text"
-                placeholder="Idea Name"
-                onChange={e => handleChangeTitle(e)}
-              ></input>
-            </div> */}
+          <form className="form" onSubmit={e => handleSubmit(e)}>
             <div>
               <input
                 className="input"
@@ -70,9 +67,9 @@ function IdeaUpdate(props){
             </div>
           </form>
           <div>
-              <button className="sumbitbtn">Delete</button>
+              <DeleteBtn/>
             </div>
-          <button onClick={props.hideInputModal} className="closebtn">
+          <button onClick={props.hideIdeaModal} className="closebtn">
             close
           </button>
         </section>

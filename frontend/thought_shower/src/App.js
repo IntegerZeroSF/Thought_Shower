@@ -11,17 +11,6 @@ import TitleView from "./components/TitleView/TitleView";
 
 function App() {
   let [data, setData] = useState();
-  
-  let [showUpdate, setShowUpdate] = useState(false);
-
-
-
-  const showUpdateModal = () => {
-    setShowUpdate(true);
-  };
-  const hideUpdateModal = () => {
-    setShowUpdate(false);
-  };
 
   let dataUrl = "http://localhost:4000/ideas/";
 
@@ -66,7 +55,7 @@ function App() {
           }
         }).then(deleteIdea => deleteIdea.json());
         data.pop(ideaData.id);
-        console.log(data);
+        
       })
       .catch(err => {
         console.log(err);
@@ -113,42 +102,22 @@ function App() {
     <div>
       <header className="header">
         <div>
-          <Header />
+          <Header createIdea = {createIdea}/>
         </div>
       </header>
       <main>
         <div>
-          
-          <div>
-            <UpdateForm
-              showUpdate={showUpdate}
-              hideUpdateModal={hideUpdateModal}
-              updateIdea={updateIdea}
-              data={data}
-            >
-              <p>Modal</p>
-            </UpdateForm>
-            <button
-              className="createbtn"
-              type="button"
-              onClick={showUpdateModal}
-            >
-              Update an Idea
-            </button>
+          <div className="body">
+            {/* <Home data={data} /> */}
+            <Route exact path="/" component={Home} />
           </div>
           <div>
-            <div className="body">
-              {/* <Home data={data} /> */}
-              <Route exact path="/" component={Home} />
-            </div>
-            <div>
-              {/* <TitleView data={data} /> */}
-               <Route
-                 path="/:thoughts"
-                 render={() => <TitleView data={data}/>}
-               /> 
-            </div>
-            
+            {/* <TitleView data={data} /> */}
+            <Route path="/:thoughts" 
+            render={() => <TitleView data={data} 
+                          updateIdea={updateIdea}
+                          deleteIdea={deleteIdea}/>} 
+                          />
           </div>
         </div>
       </main>

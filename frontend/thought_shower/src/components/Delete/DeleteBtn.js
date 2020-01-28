@@ -18,6 +18,8 @@ function DeleteBtn(props) {
               showDelete={showDelete}
               hideDeleteModal={hideDeleteModal}
               deleteIdea={props.deleteIdea}
+              id={props.id}
+              title={props.title}
             >
               <p>Modal</p>
             </DeleteForm>

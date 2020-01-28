@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./TitleView.css";
 import DeleteBtn from "../Delete/DeleteBtn"
 import UpdateBtn from "../Update/UpdateBtn"
+import TitleView from "./TitleView"
 
 // const axios = require('axios').default;
 // const URL = 'https://thought-shower.herokuapp.com'
@@ -9,6 +10,7 @@ import UpdateBtn from "../Update/UpdateBtn"
 function IdeaList(props) {
     let [showIdea, setShowIdea] = useState(false);
   if (props.data) {
+    console.log("idealist",props)
     
     const showIdeaModal = () => {
       setShowIdea(true);
@@ -22,22 +24,19 @@ function IdeaList(props) {
       const color =
         arr.likes >= 0 ? (arr.likes > 0 ? "green" : "black") : "red";
       return (
-        <div className="container">
-          <h1 style={{ textAlign: "left" }}>{arr.title}</h1>
-          <h2 style={{ textAlign: "left" }}>{arr.category}</h2>
-          <textarea className="view-details">{arr.post}</textarea>
-          <UpdateBtn data={props.data}
-                    updateIdea={props.updateIdea}/>
-          <DeleteBtn deleteIdea={props.deleteIdea}/>
-          <div className="button-container">
-            <span className={"like-count " + color}>{arr.likes}</span>
-            <button className="like-button upvote">
-              <img src="thumbs_up.png" className="like" />
-            </button>
-            <button className="like-button downvote">
-              <img src="thumbs_down.png" className="like" />
-            </button>
-          </div>
+        <div>
+        <TitleView
+              id = {arr._id}
+              title = {arr.title}
+              category={arr.category}
+              post={arr.post}
+              likes={arr.likes}
+              color={color}
+              updateIdea={props.updateIdea}
+              deleteIdea={props.deleteIdea}
+              />
+            
+          
         </div>
       );
     });

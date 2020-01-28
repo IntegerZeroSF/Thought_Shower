@@ -18,7 +18,10 @@ function UpdateBtn(props) {
               showUpdate={showUpdate}
               hideUpdateModal={hideUpdateModal}
               updateIdea={props.updateIdea}
-              data={props.data}
+              id = {props.id}
+              title={props.title}
+              category={props.category}
+              post={props.post}
             >
               <p>Modal</p>
             </UpdateForm>

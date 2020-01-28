@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function DeleteForm(props) {
-  let [title, setTitle] = useState();
+  let [title, setTitle] = useState(props.title);
 
   const showHideClassName = props.showDelete
     ? "modal display-block"
@@ -16,6 +16,7 @@ function DeleteForm(props) {
     e.preventDefault();
 
     props.deleteIdea(title);
+    props.hideDeleteModal()
   };
   return (
     <div className={showHideClassName}>

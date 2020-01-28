@@ -32,7 +32,8 @@ function InputForm(props) {
       post: post
     };
 
-    props.createIdea(Idea);
+    props.createIdea(Idea)
+    props.hideInputModal()
   };
   return (
     <div className={showHideClassName}>

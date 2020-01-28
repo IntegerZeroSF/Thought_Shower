@@ -7,7 +7,7 @@ import UpdateForm from "./components/Update/UpdateForm";
 import { Link, Route } from "react-router-dom";
 import Home from "./components/Home/Home.js";
 import Header from "./components/Header/Header.js";
-import TitleView from "./components/TitleView/TitleView";
+import IdeaList from "./components/TitleView/IdeaList";
 
 function App() {
   let [data, setData] = useState();
@@ -114,7 +114,7 @@ function App() {
           <div>
             {/* <TitleView data={data} /> */}
             <Route path="/:thoughts" 
-            render={() => <TitleView data={data} 
+            render={() => <IdeaList data={data} 
                           updateIdea={updateIdea}
                           deleteIdea={deleteIdea}/>} 
                           />

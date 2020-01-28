@@ -17,12 +17,14 @@
 
 .modal-main {
   position: fixed;
-  background: white;
+  background-color: rgba(245, 245, 245, 0.80);
   width: 60%;
   height: auto;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
+  /* z-index:-1; */
+  position:relative
 }
 
 .display-block {
@@ -32,3 +34,10 @@
 .display-none {
   display: none;
 }
+
+
+        /*{ <div className="thoughts"> }
+        <Link to={"/thoughts/"}>
+        <button className="homeButtons">Browse</button>
+      </Link>
+    { </div> }*/

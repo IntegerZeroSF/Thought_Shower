@@ -1,11 +1,11 @@
 .container {
-    width: 500px;
-    height: 180px;
+    width: 600px;
+    height: 25%;
     border: 2px solid black;
     border-radius: 10px;
     margin: 20px auto;
     padding: 0 10px;
-    line-height: 10px;
+    /* line-height: 10px; */
 }
 
 .view-details {
@@ -92,4 +92,13 @@
     .view-details {
         width: 150px;
     }
+}
+
+
+.buttonDiv {
+    padding-top: 1vh;
+}
+
+.titleViewButton {
+    margin: 1vh 0;
 }

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "../Header/Header.css";
 import UpdateForm from "./UpdateForm";
 
+// import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Button from 'react-bootstrap/Button';
+
 function UpdateBtn(props) {
   let [showUpdate, setShowUpdate] = useState(false);
 
@@ -25,13 +28,13 @@ function UpdateBtn(props) {
             >
               <p>Modal</p>
             </UpdateForm>
-            <button
+            <Button
               className="createbtn"
               type="button"
               onClick={showUpdateModal}
             >
               Update an Idea
-            </button>
+            </Button>
           </div>
   );
 }

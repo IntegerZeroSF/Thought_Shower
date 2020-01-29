@@ -10,6 +10,8 @@ import Home from "./components/Home/Home.js";
 import Header from "./components/Header/Header.js";
 import IdeaList from "./components/TitleView/IdeaList";
 
+import axios from 'axios'
+
 function App() {
   let [data, setData] = useState();
 
@@ -27,19 +29,11 @@ function App() {
   }, []);
 
   const createIdea = Idea => {
-    fetch(dataUrl, {
-      body: JSON.stringify(Idea),
-      method: "post",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json"
-      }
-    }).then(createdIdea => createdIdea.json());
-    let newData = data
-    console.log('newdata',newData)
-    newData.push(Idea);
-    setData(newData)
-    console.log('data',data)
+    axios.post(dataUrl, Idea)
+      .then(ideas => {
+        let newData = ideas
+        setData(newData)
+      })
   };
 
   const deleteIdea = title => {
@@ -103,7 +97,7 @@ function App() {
         console.log(err);
       });
   };
-
+  console.log(data)
   return (
     <div>
       <header className="header">

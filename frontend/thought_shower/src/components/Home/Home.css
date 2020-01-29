@@ -9,13 +9,8 @@
 
 }
 
-<<<<<<< HEAD
-/*.intro {
-    position: relative;
-=======
 .intro {
     /* position: relative; */
->>>>>>> ea8ae1ec52085638cf3d1b6187c7d3da0decf52b
     margin: auto;
     align-items: center;   
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -87,4 +82,4 @@
   .btn-flat:hover:after {
     transform: translateY(100%);
     transition: transform .5s;
-  } */
+  } 

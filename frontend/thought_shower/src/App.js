@@ -100,17 +100,6 @@ function App() {
       });
   };
 
-<<<<<<< HEAD
-    return (
-      <div>
-        <Header />
-        <Home />
-      </div>
-    );
-  }
-  
-  export default App;
-=======
   return (
     <div>
       <header className="header">
@@ -121,11 +110,11 @@ function App() {
       <main>
         <div>
           <div className="body">
-            {/* <Home data={data} /> */}
+      
             <Route exact path="/" component={Home} />
           </div>
           <div>
-            {/* <TitleView data={data} /> */}
+           
             <Route path="/:thoughts" 
             render={() => <IdeaList data={data} 
                           updateIdea={updateIdea}
@@ -139,4 +128,3 @@ function App() {
 }
 
 export default App;
->>>>>>> ea8ae1ec52085638cf3d1b6187c7d3da0decf52b

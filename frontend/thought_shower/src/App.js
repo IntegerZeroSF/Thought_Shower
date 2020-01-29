@@ -43,7 +43,7 @@ function App() {
   };
 
   const updateIdea = (id, idea) => {
-    axios.put(dataUrl + '/id/' + id)
+    axios.put(dataUrl + '/id/' + id, idea)
       .then(ideas => {
         setData(ideas)
       })

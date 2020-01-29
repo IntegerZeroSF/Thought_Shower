@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import "./UpdateForm.css";
 
 function UpdateForm(props) {
-  let [title, setTitle] = useState("");
-  let [category, setCategory] = useState("");
-  let [post, setPost] = useState("");
-  let [search, setSearch] = useState();
-
+  let [title, setTitle] = useState(props.title);
+  let [category, setCategory] = useState(props.category);
+  let [post, setPost] = useState(props.post);
+  
   const showHideClassName = props.showUpdate
     ? "modal display-block"
     : "modal display-none";
@@ -24,11 +23,6 @@ function UpdateForm(props) {
     setPost(e.target.value);
   };
 
-  const handleChangeSearch = e => {
-    e.preventDefault();
-    setSearch(e.target.value);
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -39,48 +33,13 @@ function UpdateForm(props) {
     };
 
     props.updateIdea(idea);
-
-    setTitle("")
-    setCategory("")
-    setPost("")
+    props.hideUpdateModal()
+   
   };
 
-  const handleSearch = e => {
-    e.preventDefault();
-    console.log(search)
-    console.log(props.data)
-    props.data.map((item) => {
-      if(item.title === search){
-        console.log(item)
-        setTitle(item.title)
-        setCategory(item.category)
-        setPost(item.post)
-      }
-    }
-    )
-    
-  };
-
-
-  return (
+   return (
     <div className={showHideClassName}>
       <section className="modal-main">
-      <form className="updateform" onSubmit={e => handleSearch(e)}>
-          <div>
-            <input
-              className="input"
-              value={search}
-              type="text"
-              placeholder="Idea Name"
-              onChange={e => handleChangeSearch(e)}
-            ></input>
-          </div>
-           <div>
-            <button className="sumbitbtn">Search</button>
-          </div>
- 
- 
-        </form>
         <div className="modalhead">Update an Idea!</div>
         <form className="updateform" onSubmit={e => handleSubmit(e)}>
           <div>

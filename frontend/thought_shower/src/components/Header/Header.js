@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 // import './Header.css'
 
@@ -66,6 +67,40 @@ function Header() {
             </Navbar>
         </div>
     )
+=======
+import React from "react";
+import "./Header.css";
+import CreateBtn from "../Create/CreateBtn";
+import { Link } from "react-router-dom";
+
+function Header(props) {
+  return (
+    <div className="headerBody">
+      <nav className="nav">
+        <Link to="/" className="navTitle">
+          Thought Shower
+        </Link>
+
+        <ul className="navList">
+          <li className="navItem">Home</li>
+          <li className="navItem">
+            <CreateBtn createIdea={props.createIdea}/>
+          </li>
+          <li className="dropdown">
+            Search
+            <div className="dropdownContent">
+              <div className="dropdownLink">Sample 1</div>
+              <div className="dropdownLink">Sample 2</div>
+              <div className="dropdownLink">Sample 3</div>
+            </div>
+          </li>
+          <li className="navItem">About Us</li>
+          <li className="navItem">Login</li>
+        </ul>
+      </nav>
+    </div>
+  );
+>>>>>>> ea8ae1ec52085638cf3d1b6187c7d3da0decf52b
 }
 
 export default Header;

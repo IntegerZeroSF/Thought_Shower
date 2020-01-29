@@ -123,7 +123,6 @@ function App() {
                           />
           </div>
         </div>
-        <AboutUs />
       </main>
     </div>
   );

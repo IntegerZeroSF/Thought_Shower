@@ -27,11 +27,11 @@ function AboutUs(props) {
                 </p>
                 <br />
                 <div className="aboutUsBtnDiv">
-                    <Button className="aboutUsBtn" variant="primary">React</Button>
-                    <Button className="aboutUsBtn" variant="primary">React-Bootstrap</Button>
-                    <Button className="aboutUsBtn" variant="primary">React-Helmet</Button>
-                    <Button className="aboutUsBtn" variant="primary">Mongoose</Button>
-                    <Button className="aboutUsBtn" variant="primary">Express</Button>
+                    <Button className="aboutUsBtn" variant="primary" href="https://reactjs.org/">React</Button>
+                    <Button className="aboutUsBtn" variant="primary" href="https://react-bootstrap.github.io/">React-Bootstrap</Button>
+                    <Button className="aboutUsBtn" variant="primary" href="https://github.com/nfl/react-helmet">React-Helmet</Button>
+                    <Button className="aboutUsBtn" variant="primary" href="https://mongoosejs.com/docs/">Mongoose</Button>
+                    <Button className="aboutUsBtn" variant="primary" href="https://expressjs.com/">Express</Button>
                 </div>
 
             </Jumbotron>

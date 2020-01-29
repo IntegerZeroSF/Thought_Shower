@@ -12,15 +12,22 @@ export default function FullCard(props) {
     }, [])
 
     // data ? console.log(data.data) : console.log('not happening')
-    const id = props.match.params.card
-    const card = data ? data.data.filter(arr => arr._id === id) : 0
-    const { user, title, category, post, comments } = card ? card[0] : 0
-
+    if (data) {
+        const id = props.match.params.card
+        const card = data ? data.data.filter(arr => arr._id === id) : 0
+        const { user, title, category, post, comments } = card ? card[0] : 0
+        return (
+            <div>
+                <h1>{title}</h1>
+                <p>{post}</p>
+                <h1>hello</h1>
+            </div>
+        )
+    }
     return (
         <div>
-            <h1>{title}</h1>
-            <p>{post}</p>
-            <h1>hello</h1>
+            
         </div>
     )
+
 }

@@ -15,8 +15,7 @@ function CreateBtn(props) {
   };
 
   return (
-    <div>
-      <nav>
+      <>
         <InputForm
           showInput={showInput}
           hideInputModal={hideInputModal}
@@ -24,11 +23,10 @@ function CreateBtn(props) {
         >
           <p>Modal</p>
         </InputForm>
-        <Nav.Link className="navbtn" type="button" onClick={showInputModal}>
+        <Nav.Link className="navBTN"  onClick={showInputModal}>
           Create
         </Nav.Link>
-      </nav>
-    </div>
+      </>
   );
 }
 

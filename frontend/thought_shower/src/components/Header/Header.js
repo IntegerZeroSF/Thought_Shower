@@ -15,17 +15,17 @@ function Header(props) {
   return (
     <div className="headerBody">
       <Navbar bg="primary" variant="light" >
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <Link to="/" className="navTitle">
             Thought Shower
           </Link>
         </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link>
-            {" "}
+          {/* <Nav.Link>
+            {" "} */}
             <CreateBtn createIdea={props.createIdea} />
-          </Nav.Link>
+          {/* </Nav.Link> */}
           <Nav.Link href="#Browse">Browse</Nav.Link>
           <Nav.Link href="#AboutUs">About Us</Nav.Link>
         </Nav>

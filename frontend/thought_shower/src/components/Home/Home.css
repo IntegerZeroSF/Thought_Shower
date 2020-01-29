@@ -3,7 +3,7 @@
     /* display: flex;
     flex-direction: column; */
     /* height: 1000px; */
-    background: linear-gradient(rgba(41, 100, 148, 0.35), rgba(66, 165, 245, 0.2), transparent), url("homeBGTest.jpg");
+    background: linear-gradient(rgba(41, 100, 148, 0.5), rgba(66, 165, 245, 0.3), transparent), url("homeBGTest.jpg");
     background-size: 100% 100%;
     padding: 10vh;
 
@@ -33,13 +33,12 @@
 .cardDiv {
     /* position: relative; */
     margin: auto;
-    align-items: center;   
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     min-height: 30%;
     width: 80%;
     border-radius: 5px;
-    border: 3px solid black;
+    border: 2px solid black;
     background-color: rgba(245, 245, 245, 0.5);
 }
 
@@ -47,17 +46,14 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
 }
 
-.cardHomeTop {
-    /* position: absolute; */
-    top: 50%;
-    left: 43%;
+.homeCardTitle {
+  text-align: center;
+  margin-bottom: 2vh;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
-.cardHomeButtons {
-    /* position: absolute; */
-    bottom: 0;
-    border-top: 3px solid black;
-    width: 100%;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+.homeCardBody {
+  text-align: center;
+  margin-bottom: 2vh;
 }

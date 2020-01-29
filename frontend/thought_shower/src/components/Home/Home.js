@@ -22,12 +22,10 @@ function Home() {
         {/* </Container> */}
       </Jumbotron>
       <Card className="cardDiv">
-        <Card.Header>Featured</Card.Header>
+        <Card.Header className="homeCardTitle">Create your own Idea</Card.Header>
         <Card.Body>
-          <Card.Title>Special title treatment</Card.Title>
-          <Card.Text>
-            With supporting text below as a natural lead-in to additional
-            content.
+          <Card.Text className="homeCardBody">
+            Click the button below to get started on submitting your own ideas.
           </Card.Text>
           <Button variant="primary" block>
             Create!
@@ -37,12 +35,10 @@ function Home() {
       <br/>
       <br/>
       <Card className="cardDiv">
-        <Card.Header>Featured</Card.Header>
+        <Card.Header className="homeCardTitle">Browse your own Idea</Card.Header>
         <Card.Body>
-          <Card.Title>Special title treatment</Card.Title>
-          <Card.Text>
-            With supporting text below as a natural lead-in to additional
-            content.
+          <Card.Text className="homeCardBody">
+            Here you can browser for all kinds of ideas or inspiration. 
           </Card.Text>
           <Link to={"/thoughts/"}>
             <Button variant="primary" block>

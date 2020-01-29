@@ -8,7 +8,8 @@ import "./App.css";
 import {  Route } from "react-router-dom";
 import Home from "./components/Home/Home.js";
 import Header from "./components/Header/Header.js";
-import IdeaList from "./components/TitleView/IdeaList";
+import IdeaList from "./components/TitleView/IdeaList.js";
+import AboutUs from "./components/About Us/About Us.js"
 
 
 function App() {
@@ -115,13 +116,14 @@ function App() {
           </div>
           <div>
            
-            <Route path="/:thoughts" 
+            <Route path="/ideas" 
             render={() => <IdeaList data={data} 
                           updateIdea={updateIdea}
                           deleteIdea={deleteIdea}/>} 
                           />
           </div>
         </div>
+        <AboutUs />
       </main>
     </div>
   );

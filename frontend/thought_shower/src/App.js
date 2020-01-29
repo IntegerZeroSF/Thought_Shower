@@ -18,14 +18,19 @@ function App() {
   let dataUrl = "http://localhost:4000/ideas";
 
   useEffect(() => {
-    fetch(dataUrl)
-      .then(res => res.json())
-      .then(ideaData => {
-        setData(ideaData);
+    // fetch(dataUrl)
+    //   .then(res => res.json())
+    //   .then(ideaData => {
+    //     setData(ideaData);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
+    axios.get(dataUrl)
+      .then(ideas => {
+        setData(ideas)
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(err => console.log(err))
   }, []);
 
   const createIdea = Idea => {
@@ -34,6 +39,7 @@ function App() {
         let newData = ideas
         setData(newData)
       })
+      .catch(err => console.log(err))
   };
 
   const deleteIdea = title => {
@@ -116,7 +122,7 @@ function App() {
           </div>
           <div>
             <Route
-              path="/:thoughts"
+              path="/ideas/:card"
               render={() => (
                 <IdeaList
                   data={data}

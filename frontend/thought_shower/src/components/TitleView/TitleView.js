@@ -41,7 +41,7 @@ function TitleView(props) {
               <button className="like-button downvote">
                 <img src="thumbs_down.png" className="like" />
               </button>
-              <Link to={"dummy/" + props.id}>Here</Link>
+
             </div>
           </div>
         );

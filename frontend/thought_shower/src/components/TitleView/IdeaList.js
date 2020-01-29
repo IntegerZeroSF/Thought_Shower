@@ -20,7 +20,7 @@ function IdeaList(props) {
     };
     console.log("titleview", props);
 
-     const ideas = props.data.map(arr => {
+     const ideas = props.data.data.map(arr => {
       const color =
         arr.likes >= 0 ? (arr.likes > 0 ? "green" : "black") : "red";
       return (

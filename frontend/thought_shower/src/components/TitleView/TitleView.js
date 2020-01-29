@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./TitleView.css";
 import UpdateBtn from "../Update/UpdateBtn"
 import DeleteBtn from "../Delete/DeleteBtn"
+import { Link } from "react-router-dom"
 
 // const axios = require('axios').default;
 // const URL = 'https://thought-shower.herokuapp.com'
@@ -40,6 +41,7 @@ function TitleView(props) {
               <button className="like-button downvote">
                 <img src="thumbs_down.png" className="like" />
               </button>
+              <Link to={"dummy/" + props.id}>Here</Link>
             </div>
           </div>
         );

@@ -56,7 +56,7 @@ function Header() {
                 <Nav className="mr-auto">
                 <Nav.Link href="#home">Home</Nav.Link>
                 <Nav.Link href="#Create">Create</Nav.Link>
-                <Nav.Link href="#Browse">Browse</Nav.Link>
+                <Nav.Link href="ideas">Browse</Nav.Link>
                 <Nav.Link href="#AboutUs">About Us</Nav.Link>
                 </Nav>
                 <Form inline>

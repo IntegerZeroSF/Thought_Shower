@@ -10,11 +10,13 @@ import Home from "./components/Home/Home.js";
 import Header from "./components/Header/Header.js";
 import IdeaList from "./components/TitleView/IdeaList";
 
+import FullCard from './components/FullCard/FullCard'
+
 
 function App() {
   let [data, setData] = useState();
 
-  let dataUrl = "http://localhost:4000/ideas/";
+  let dataUrl = "http://localhost:4000/ideas";
 
   useEffect(() => {
     fetch(dataUrl)
@@ -100,17 +102,6 @@ function App() {
       });
   };
 
-<<<<<<< HEAD
-    return (
-      <div>
-        <Header />
-        <Home />
-      </div>
-    );
-  }
-  
-  export default App;
-=======
   return (
     <div>
       <header className="header">
@@ -126,11 +117,12 @@ function App() {
           </div>
           <div>
             {/* <TitleView data={data} /> */}
-            <Route path="/:thoughts" 
+            <Route path="/ideas" 
             render={() => <IdeaList data={data} 
                           updateIdea={updateIdea}
                           deleteIdea={deleteIdea}/>} 
                           />
+            <Route path="/dummy/:card" render={props => <FullCard {...props} /> } />
           </div>
         </div>
       </main>
@@ -139,4 +131,3 @@ function App() {
 }
 
 export default App;
->>>>>>> ea8ae1ec52085638cf3d1b6187c7d3da0decf52b

@@ -14,14 +14,14 @@ import FormControl from "react-bootstrap/FormControl";
 function Header(props) {
   return (
     <div className="headerBody">
-      <Navbar bg="primary" variant="dark">
+      <Navbar bg="primary" variant="light" >
         <Navbar.Brand href="#home">
           <Link to="/" className="navTitle">
             Thought Shower
           </Link>
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link>
             {" "}
             <CreateBtn createIdea={props.createIdea} />

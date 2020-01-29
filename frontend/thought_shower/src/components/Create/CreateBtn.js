@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "../Header/Header.css";
 import InputForm from "../Create/InputForm";
 
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+
 function CreateBtn(props) {
   let [showInput, setShowInput] = useState(false);
   const showInputModal = () => {
@@ -21,9 +24,9 @@ function CreateBtn(props) {
         >
           <p>Modal</p>
         </InputForm>
-        <button className="navbtn" type="button" onClick={showInputModal}>
+        <Nav.Link className="navbtn" type="button" onClick={showInputModal}>
           Create
-        </button>
+        </Nav.Link>
       </nav>
     </div>
   );

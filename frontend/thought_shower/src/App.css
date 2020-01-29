@@ -17,14 +17,15 @@
 
 .modal-main {
   position: fixed;
-  background-color: rgba(245, 245, 245, 0.80);
+  background-color: rgba(255, 255, 255, 0.9);
   width: 60%;
   height: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
   /* z-index:-1; */
-  position:relative
+  position: relative;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .display-block {

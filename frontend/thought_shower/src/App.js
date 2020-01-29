@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
-import InputForm from "./components//Create/InputForm";
-import DeleteForm from "./components//Delete/DeleteForm";
-import UpdateForm from "./components/Update/UpdateForm";
-import { Link, Route } from "react-router-dom";
+// import InputForm from "./components//Create/InputForm";
+// import DeleteForm from "./components//Delete/DeleteForm";
+// import UpdateForm from "./components/Update/UpdateForm";
+import {  Route } from "react-router-dom";
 import Home from "./components/Home/Home.js";
 import Header from "./components/Header/Header.js";
 import IdeaList from "./components/TitleView/IdeaList";

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import CreateBtn from "../Create/CreateBtn";
 import TitleView from "../TitleView/TitleView";
 import { Link } from "react-router-dom";
 
@@ -8,7 +9,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
-function Home() {
+function Home(props) {
   return (
     <div className="homeBody">
       <Jumbotron fluid>
@@ -28,9 +29,7 @@ function Home() {
             With supporting text below as a natural lead-in to additional
             content.
           </Card.Text>
-          <Button variant="primary" block>
-            Create!
-          </Button>
+          <CreateBtn createIdea={props.createIdea} />
         </Card.Body>
       </Card>
       <Card>

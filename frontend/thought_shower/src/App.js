@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 import InputForm from "./components//Create/InputForm";
@@ -9,7 +9,6 @@ import { Link, Route } from "react-router-dom";
 import Home from "./components/Home/Home.js";
 import Header from "./components/Header/Header.js";
 import IdeaList from "./components/TitleView/IdeaList";
-
 
 function App() {
   let [data, setData] = useState();
@@ -36,7 +35,11 @@ function App() {
         "Content-Type": "application/json"
       }
     }).then(createdIdea => createdIdea.json());
-    data.push(Idea);
+    let newData = data
+    console.log('newdata',newData)
+    newData.push(Idea);
+    setData(newData)
+    console.log('data',data)
   };
 
   const deleteIdea = title => {
@@ -56,8 +59,9 @@ function App() {
             "Content-Type": "application/json"
           }
         }).then(deleteIdea => deleteIdea.json());
-        data.pop(ideaData.id);
-        
+        let newData = data
+        newData.pop(ideaData.id);
+        setData(newData)
       })
       .catch(err => {
         console.log(err);
@@ -104,22 +108,29 @@ function App() {
     <div>
       <header className="header">
         <div>
-          <Header createIdea = {createIdea}/>
+          <Header createIdea={createIdea} />
         </div>
       </header>
       <main>
         <div>
           <div className="body">
-      
-            <Route exact path="/" component={Home} />
+            <Route
+              exact
+              path="/"
+              render={() => <Home createIdea={createIdea} />}
+            />
           </div>
           <div>
-           
-            <Route path="/:thoughts" 
-            render={() => <IdeaList data={data} 
-                          updateIdea={updateIdea}
-                          deleteIdea={deleteIdea}/>} 
-                          />
+            <Route
+              path="/:thoughts"
+              render={() => (
+                <IdeaList
+                  data={data}
+                  updateIdea={updateIdea}
+                  deleteIdea={deleteIdea}
+                />
+              )}
+            />
           </div>
         </div>
       </main>

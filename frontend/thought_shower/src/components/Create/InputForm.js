@@ -31,9 +31,10 @@ function InputForm(props) {
       category: category,
       post: post
     };
-
+    console.log(Idea)
     props.createIdea(Idea)
     props.hideInputModal()
+    
   };
   return (
     <div className={showHideClassName}>

@@ -32,7 +32,7 @@ function UpdateForm(props) {
       post: post
     };
 
-    props.updateIdea(idea);
+    props.updateIdea(props.id, idea);
     props.hideUpdateModal()
    
   };

@@ -22,7 +22,6 @@ function TitleView(props) {
           <div className="container">
             <h1 style={{ textAlign: "left" }}>{props.title}</h1>
             <h2 style={{ textAlign: "left" }}>{props.category}</h2>
-            <p>{props.post}</p>
             <UpdateBtn id={props.id}
                       title={props.title}
                       category={props.category}

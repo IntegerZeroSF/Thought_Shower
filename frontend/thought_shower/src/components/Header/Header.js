@@ -15,15 +15,13 @@ function Header(props) {
   return (
     <div className="headerBody">
       <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="#home">
-          <Link to="/" className="navTitle">
-            Thought Shower
-          </Link>
+        <Navbar.Brand href="/" className="navTitle">
+          Thought Shower
         </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#home">Home</Nav.Link>
           <CreateBtn createIdea={props.createIdea}/>
-          <Nav.Link href="#Browse">Browse</Nav.Link>
+          <Nav.Link href="ideas">Browse</Nav.Link>
           <Nav.Link href="#AboutUs">About Us</Nav.Link>
         </Nav>
         <Form inline>

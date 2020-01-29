@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 import InputForm from "./components//Create/InputForm";
@@ -7,6 +8,7 @@ import UpdateForm from "./components/Update/UpdateForm";
 import { Link, Route } from "react-router-dom";
 import Home from './components/Home/Home.js'
 import Header from './components/Header/Header.js'
+
 
 function App() {
 
@@ -130,69 +132,8 @@ function App() {
 
     return (
       <div>
-        
-        <header className="header">
-          <Link to="/" className="link">
-            Thought Shower
-          </Link>
-        </header>
-        <main>
-          <div className="body">
-            <div></div>
-            <div>
-              <InputForm
-                showInput={showInput}
-                hideInputModal={hideInputModal}
-                createIdea={createIdea}
-              >
-                <p>Modal</p>
-              </InputForm>
-              <button
-                className="createbtn"
-                type="button"
-                onClick={showInputModal}
-              >
-                Create an Idea
-              </button>
-            </div>
-            <div>
-            <DeleteForm
-              showDelete={showDelete}
-              hideDeleteModal={hideDeleteModal}
-              deleteIdea={deleteIdea}
-            >
-              <p>Modal</p>
-            </DeleteForm>
-            <button
-              className="createbtn"
-              type="button"
-              onClick={showDeleteModal}
-            >
-              Delete an Idea
-            </button>
-          </div><div>
-            <UpdateForm
-              showUpdate={showUpdate}
-              hideUpdateModal={hideUpdateModal}
-              updateIdea={updateIdea}
-              data={data}
-            >
-              <p>Modal</p>
-            </UpdateForm>
-            <button
-              className="createbtn"
-              type="button"
-              onClick={showUpdateModal}
-            >
-              Update an Idea
-            </button>
-          </div>
-            <div className="body">
-              <Home data={data} />
-              <Route exact path="/" component={Home} />
-            </div>
-          </div>
-        </main>
+        <Header />
+        <Home />
       </div>
     );
   }

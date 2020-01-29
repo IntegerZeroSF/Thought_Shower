@@ -58,13 +58,8 @@
     padding-bottom: 1vh;
 }
 
-<<<<<<< HEAD
   .btn-flat {
     position: relative;
-=======
-  .homeButtons {
-    /* position: relative; */
->>>>>>> ea8ae1ec52085638cf3d1b6187c7d3da0decf52b
     width: 250px; height: 60px;
     background: #42A5F5;
     margin: 0 10px;
@@ -79,13 +74,8 @@
     border: hidden;
   }
 
-<<<<<<< HEAD
   .btn-flat:after {
     position: absolute;
-=======
-  .homeButtons:after {
-    /* position: absolute; */
->>>>>>> ea8ae1ec52085638cf3d1b6187c7d3da0decf52b
     bottom: 100%; left: 0;
     width: 100%; height: 100%;
     background: #296596;

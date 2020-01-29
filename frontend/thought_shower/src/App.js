@@ -13,7 +13,7 @@ import IdeaList from "./components/TitleView/IdeaList";
 function App() {
   let [data, setData] = useState();
 
-  let dataUrl = "http://localhost:4000/ideas/";
+  let dataUrl = "http://localhost:4000/ideas";
 
   useEffect(() => {
     fetch(dataUrl)

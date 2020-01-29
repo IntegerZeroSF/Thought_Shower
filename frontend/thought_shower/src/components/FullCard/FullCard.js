@@ -16,11 +16,25 @@ export default function FullCard(props) {
     const card = data ? data.data.filter(arr => arr._id === id) : 0
     const { user, title, category, post, comments } = card ? card[0] : 0
 
+const commentList = comments 
+    ? comments.map(com => {
+        return (
+            <div>
+                <h5>{com.user}</h5>
+                <p>{com.message}</p>
+
+            </div>
+        )}) 
+    : ''
+
     return (
         <div>
-            <h1>{title}</h1>
+            <h1>{user}</h1>
+            <h2>{title}</h2>
             <p>{post}</p>
-            <h1>hello</h1>
+            <div>
+                {commentList}
+            </div>
         </div>
     )
 }

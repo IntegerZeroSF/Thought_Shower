@@ -122,7 +122,7 @@ function App() {
                           updateIdea={updateIdea}
                           deleteIdea={deleteIdea}/>} 
                           />
-            <Route path="/dummy/:card" render={props => <FullCard {...props} /> } />
+            <Route path="/ideas/:card" render={props => <FullCard {...props} /> } />
           </div>
         </div>
       </main>

@@ -21,8 +21,8 @@ function Header(props) {
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <CreateBtn createIdea={props.createIdea}/>
-          <Nav.Link href="ideas">Browse</Nav.Link>
-          <Nav.Link href="#AboutUs">About Us</Nav.Link>
+          <Nav.Link href="/ideas">Browse</Nav.Link>
+          <Nav.Link href="/aboutus">About Us</Nav.Link>
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />

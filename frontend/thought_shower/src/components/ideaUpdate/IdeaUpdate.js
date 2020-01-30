@@ -1,7 +1,9 @@
 import React, { useState }from 'react';
 import DeleteBtn from "../Delete/DeleteBtn"
+import "./IdeaUpdate.css"
 
-
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 function IdeaUpdate(props){
 
@@ -39,8 +41,8 @@ function IdeaUpdate(props){
 
     return (
       <div className={showHideClassName}>
-        <section className="modal-main">
-          <div className="modalhead">hi</div>
+        <Card className="modal-main">
+          <Card.Title className="modalhead">hi</Card.Title>
           <form className="form" onSubmit={e => handleSubmit(e)}>
             <div>
               <input
@@ -72,7 +74,7 @@ function IdeaUpdate(props){
           <button onClick={props.hideIdeaModal} className="closebtn">
             close
           </button>
-        </section>
+        </Card>
       </div>
     
   )

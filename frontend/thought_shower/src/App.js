@@ -69,12 +69,13 @@ function App() {
             />
           </div>
           <div>
-           
             <Route path="/ideas" 
             render={() => <IdeaList data={data} 
                           updateIdea={updateIdea}
                           deleteIdea={deleteIdea}/>} 
                           />
+            <Route path="/aboutus"
+             render={() => <AboutUs />}/>
           </div>
         </div>
       </main>

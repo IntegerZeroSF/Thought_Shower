@@ -19,10 +19,10 @@ function Header(props) {
           Thought Shower
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="/">Home</Nav.Link>
           <CreateBtn createIdea={props.createIdea}/>
-          <Nav.Link href="#Browse">Browse</Nav.Link>
-          <Nav.Link href="#AboutUs">About Us</Nav.Link>
+          <Nav.Link href="/ideas">Browse</Nav.Link>
+          <Nav.Link href="/aboutus">About Us</Nav.Link>
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />

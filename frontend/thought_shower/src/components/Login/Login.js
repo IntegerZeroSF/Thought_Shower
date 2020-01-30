@@ -1,0 +1,50 @@
+import React, { useState } from 'react'
+
+export default function Login(props) {
+    let [email, setEmail] = useState('')
+    let [password, setPass] = useState('')
+
+    const handleEmailChange = e => {
+        e.preventDefault()
+        setEmail(e.target.value)
+    }
+
+    const handlePassChange = e => {
+        e.preventDefault()
+        setPass(e.target.value)
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        const user = {
+            email,
+            password
+        }
+        props.handleLogin(user)
+    }
+
+    return (
+        <div>
+            <h1>Login</h1>
+            <form onSubmit={handleSubmit}>
+                <input 
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={handleEmailChange}
+                />
+                <br/>
+                <input 
+                    type="text"
+                    name="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={handlePassChange}
+                />
+                <br/>
+                <input type="Submit"/>
+            </form>
+        </div>
+    )
+}

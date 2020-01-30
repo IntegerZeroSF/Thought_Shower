@@ -22,6 +22,7 @@ function Header(props) {
           <Nav.Link href="/ideas">Browse</Nav.Link>
           <Nav.Link href="/aboutus">About Us</Nav.Link>
         </Nav>
+        <button onClick={props.handleLogout}>Log Out</button>
         <Form inline>
           <FormControl type='text' placeholder='Search' className='mr-sm-2' />
           <Button variant='outline-light'>Search</Button>

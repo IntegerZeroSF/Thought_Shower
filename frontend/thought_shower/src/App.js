@@ -12,22 +12,47 @@ import IdeaList from "./components/TitleView/IdeaList.js";
 import AboutUs from "./components/About Us/About Us.js"
 import {Helmet} from "react-helmet";
 import FullCard from './components/FullCard/FullCard'
+import Login from './components/Login/Login'
+import SignUp from './components/Login/SignUp'
 
 import axios from 'axios'
 
 function App() {
-  let [data, setData] = useState();
-  let [redirect, setRedirect] = useState('')
+  let [data, setData] = useState()
+  let [isLoggedIn, setLogin] = useState(false)
 
   let dataUrl = "http://localhost:4000/ideas";
 
   useEffect(() => {
+    if (localStorage.token) setLogin(true)
+
     axios.get(dataUrl)
       .then(ideas => {
         setData(ideas)
       })
       .catch(err => console.log(err))
   }, []);
+
+  const handleLogin = user => {
+    axios.post('http://localhost:4000/auth', user)
+      .then(res => {
+            localStorage.token = res.data.token
+            setLogin(true)
+      }).catch(err => console.log(err))
+  }
+
+  const handleSignUp = user => {
+    axios.post('http://localhost:4000/users', user)
+      .then(res => {
+            localStorage.token = res.data.token
+            setLogin(true)
+      }).catch(err => console.log(err))
+  }
+
+  const handleLogout = () => {
+    localStorage.clear()
+    setLogin(false)
+  }
 
   const createIdea = Idea => {
     axios.post(dataUrl, Idea)
@@ -54,13 +79,12 @@ function App() {
       .catch(err => console.log(err))
   };
 
-  console.log(data)
   return (
     <div>
     <Helmet><title>Thought Shower</title></Helmet>
       <header className="header">
         <div>
-          <Header createIdea={createIdea} />
+          <Header createIdea={createIdea} handleLogout={handleLogout} />
         </div>
       </header>
       <main>
@@ -78,6 +102,10 @@ function App() {
           render={() => <AboutUs />} />
         <Route path="/fullview/:id"
           render={props => <FullCard {...props}/>} />
+        <Route path="/login"
+          render={() => <Login handleLogin={handleLogin}/>} />
+        <Route path="/signup"
+          render={() => <SignUp handleSignUp={handleSignUp}/>} />
       </main>
     </div>
   );

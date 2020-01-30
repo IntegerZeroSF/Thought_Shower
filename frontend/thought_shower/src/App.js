@@ -10,6 +10,7 @@ import Home from "./components/Home/Home.js";
 import Header from "./components/Header/Header.js";
 import IdeaList from "./components/TitleView/IdeaList.js";
 import AboutUs from "./components/About Us/About Us.js"
+import {Helmet} from "react-helmet";
 
 import axios from 'axios'
 
@@ -54,6 +55,7 @@ function App() {
   console.log(data)
   return (
     <div>
+    <Helmet><title>Thought Shower</title></Helmet>
       <header className="header">
         <div>
           <Header createIdea={createIdea} />

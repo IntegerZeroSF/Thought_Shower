@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./UpdateForm.css";
 
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
 function UpdateForm(props) {
   let [title, setTitle] = useState(props.title);
   let [category, setCategory] = useState(props.category);
@@ -39,8 +42,9 @@ function UpdateForm(props) {
 
    return (
     <div className={showHideClassName}>
-      <section className="modal-main">
-        <div className="modalhead">Update an Idea!</div>
+      <Card className="modal-main">
+        <Card.Title className="modalHead">Update an Idea!</Card.Title>
+        <Card.Body>
         <form className="updateform" onSubmit={e => handleSubmit(e)}>
           <div>
             <input
@@ -71,13 +75,14 @@ function UpdateForm(props) {
           </div>
 
           <div>
-            <button className="sumbitbtn">Submit</button>
+            <Button  className="sumbitbtn">Submit</Button >
           </div>
         </form>
-        <button onClick={props.hideUpdateModal} className="closebtn">
-          close
-        </button>
-      </section>
+        </Card.Body>
+        <Button onClick={props.hideUpdateModal} className="closeCreateBtn">
+          Close
+        </Button>
+      </Card>
     </div>
   );
 }

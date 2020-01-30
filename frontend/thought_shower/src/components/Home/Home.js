@@ -41,7 +41,7 @@ function Home(props) {
           <Card.Text className="homeCardBody">
             Here you can browser for all kinds of ideas or inspiration. 
           </Card.Text>
-          <Link to={"/thoughts/"}>
+          <Link to={"/ideas"}>
             <Button variant="primary" block>
               Browse
             </Button>

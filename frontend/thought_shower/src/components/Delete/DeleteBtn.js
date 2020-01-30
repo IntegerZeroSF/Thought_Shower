@@ -31,7 +31,7 @@ function DeleteBtn(props) {
               type="button"
               onClick={showDeleteModal}
             >
-              Delete an Idea
+              Delete Idea
             </Button>
           </div>
   );

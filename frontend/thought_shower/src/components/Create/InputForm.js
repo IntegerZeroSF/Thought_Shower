@@ -44,7 +44,7 @@ function InputForm(props) {
       <Card className="modal-main">
         <Card.Title className="modalHead">Create a New Idea!</Card.Title>
         <Card.Body>
-        <form className="inputform" onSubmit={e => handleSubmit(e)}>
+        <form className="inputform" onSubmit={handleSubmit}>
           <div>
             <input
               className="input"
@@ -76,7 +76,7 @@ function InputForm(props) {
           </div>
 
           <div>
-            <Button className="sumbitbtn">Submit</Button>
+            <Button type="Submit" className="sumbitbtn">Submit</Button>
           </div>
         </form>
         </Card.Body>

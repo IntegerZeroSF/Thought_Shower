@@ -35,14 +35,15 @@ function TitleView(props) {
               <DeleteBtn id={props.id} 
                           title={props.title}
                         deleteIdea={props.deleteIdea}/>
+              <button><Link to={"/fullview/" + props.id}>View Card</Link></button>
               
               <div className="button-container">
                 <span className={"like-count " + props.color}>{props.likes}</span>
                 <button className="like-button upvote">
-                  <img src="thumbs_up.png" className="like" />
+                  <img src="/thumbs_up.png" className="like" />
                 </button>
                 <button className="like-button downvote">
-                  <img src="thumbs_down.png" className="like" />
+                  <img src="/thumbs_down.png" className="like" />
                 </button>
               </div>
             </div>

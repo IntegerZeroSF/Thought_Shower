@@ -5,16 +5,18 @@ import "./App.css";
 // import InputForm from "./components//Create/InputForm";
 // import DeleteForm from "./components//Delete/DeleteForm";
 // import UpdateForm from "./components/Update/UpdateForm";
-import {  Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Home from "./components/Home/Home.js";
 import Header from "./components/Header/Header.js";
 import IdeaList from "./components/TitleView/IdeaList.js";
 import AboutUs from "./components/About Us/About Us.js"
+import FullCard from './components/FullCard/FullCard'
 
 import axios from 'axios'
 
 function App() {
   let [data, setData] = useState();
+  let [redirect, setRedirect] = useState('')
 
   let dataUrl = "http://localhost:4000/ideas";
 
@@ -60,23 +62,20 @@ function App() {
         </div>
       </header>
       <main>
-        <div>
-          <div className="body">
-            <Route
-              exact
-              path="/"
-              render={() => <Home createIdea={createIdea} />}
-            />
-          </div>
-          <div>
-           
-            <Route path="/ideas" 
-            render={() => <IdeaList data={data} 
-                          updateIdea={updateIdea}
-                          deleteIdea={deleteIdea}/>} 
-                          />
-          </div>
-        </div>
+        <Route
+          exact
+          path="/"
+          render={() => <Home createIdea={createIdea} />}
+        />
+        <Route path="/ideas"
+          render={() => <IdeaList data={data}
+            updateIdea={updateIdea}
+            deleteIdea={deleteIdea} />}
+        />
+        <Route path="/aboutus"
+          render={() => <AboutUs />} />
+        <Route path="/fullview/:id"
+          render={props => <FullCard {...props}/>} />
       </main>
     </div>
   );

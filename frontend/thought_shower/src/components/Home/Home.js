@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
-import CreateBtn from "../Create/CreateBtn";
-import TitleView from "../TitleView/TitleView";
+import HomeCreateBtn from "../Create/HomeCreateBtn"
 import { Link } from "react-router-dom";
 
 
@@ -28,8 +27,8 @@ function Home(props) {
           <Card.Text className="homeCardBody">
             Click the button below to get started on submitting your own ideas.
           </Card.Text>
-          <Button createIdea={props.createIdea} block>
-            Create
+          <Button variant="primary" block>
+            <HomeCreateBtn createIdea={props.createIdea} />
           </Button>
         </Card.Body>
       </Card>

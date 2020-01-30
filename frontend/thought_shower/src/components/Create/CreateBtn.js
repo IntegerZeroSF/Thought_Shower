@@ -24,18 +24,10 @@ function CreateBtn(props) {
         >
           <p>Modal</p>
         </InputForm>
-<<<<<<< HEAD
-        <Button variant="primary" block onClick={showInputModal}>
+        <Button className="navBTN"  onClick={showInputModal} variant="primary" block>
           Create
         </Button>
-      </nav>
-    </div>
-=======
-        <Nav.Link className="navBTN"  onClick={showInputModal}>
-          Create
-        </Nav.Link>
       </>
->>>>>>> bootstrap_day2
   );
 }
 

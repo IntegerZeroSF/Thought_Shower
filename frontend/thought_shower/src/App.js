@@ -69,25 +69,12 @@ function App() {
             />
           </div>
           <div>
-<<<<<<< HEAD
-            <Route
-              path="/ideas"
-              render={() => (
-                <IdeaList
-                  data={data}
-                  updateIdea={updateIdea}
-                  deleteIdea={deleteIdea}
-                />
-              )}
-            />
-=======
            
             <Route path="/ideas" 
             render={() => <IdeaList data={data} 
                           updateIdea={updateIdea}
                           deleteIdea={deleteIdea}/>} 
                           />
->>>>>>> bootstrap_day2
           </div>
         </div>
       </main>

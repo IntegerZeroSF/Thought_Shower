@@ -7,14 +7,11 @@
 }
 
 .inputform {
-  /* display: block; */
   width: 50%;
   margin: auto;
-  /* border: 2px solid #007BFF; */
 }
 
 .input {
-  /* border: 2px solid #007BFF; */
   font-weight: bold;
   width: 80%;
   padding: 10px;

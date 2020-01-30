@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "../Header/Header.css";
-import DeleteForm from "./DeleteForm";
+import React, { useState } from 'react';
+import '../Header/Header.css';
+import DeleteForm from './DeleteForm';
 
 import Button from 'react-bootstrap/Button';
 
@@ -27,8 +27,8 @@ function DeleteBtn(props) {
               <p>Modal</p>
             </DeleteForm>
             <Button
-              className="createbtn"
-              type="button"
+              className='createbtn'
+              type='button'
               onClick={showDeleteModal}
             >
               Delete Idea

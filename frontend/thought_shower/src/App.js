@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import InputForm from "./components//Create/InputForm";
-import DeleteForm from "./components//Delete/DeleteForm";
-import UpdateForm from "./components/Update/UpdateForm";
-import { Link, Route } from "react-router-dom";
+// import InputForm from "./components//Create/InputForm";
+// import DeleteForm from "./components//Delete/DeleteForm";
+// import UpdateForm from "./components/Update/UpdateForm";
+import {  Route } from "react-router-dom";
 import Home from "./components/Home/Home.js";
 import Header from "./components/Header/Header.js";
-import IdeaList from "./components/TitleView/IdeaList";
+import IdeaList from "./components/TitleView/IdeaList.js";
+import AboutUs from "./components/About Us/About Us.js"
 
 import axios from 'axios'
 
@@ -121,6 +122,7 @@ function App() {
             />
           </div>
           <div>
+<<<<<<< HEAD
             <Route
               path="/ideas/:card"
               render={() => (
@@ -131,6 +133,14 @@ function App() {
                 />
               )}
             />
+=======
+           
+            <Route path="/ideas" 
+            render={() => <IdeaList data={data} 
+                          updateIdea={updateIdea}
+                          deleteIdea={deleteIdea}/>} 
+                          />
+>>>>>>> bootstrap_day2
           </div>
         </div>
       </main>

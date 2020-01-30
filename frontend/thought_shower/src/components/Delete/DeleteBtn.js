@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "../Header/Header.css";
 import DeleteForm from "./DeleteForm";
 
+import Button from 'react-bootstrap/Button';
+
+
 function DeleteBtn(props) {
   let [showDelete, setShowDelete] = useState(false);
 
@@ -23,13 +26,13 @@ function DeleteBtn(props) {
             >
               <p>Modal</p>
             </DeleteForm>
-            <button
+            <Button
               className="createbtn"
               type="button"
               onClick={showDeleteModal}
             >
               Delete an Idea
-            </button>
+            </Button>
           </div>
   );
 }

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./InputForm.css";
 
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
 function InputForm(props) {
   let [title, setTitle] = useState();
   let [category, setCategory] = useState();
@@ -38,8 +41,9 @@ function InputForm(props) {
   };
   return (
     <div className={showHideClassName}>
-      <section className="modal-main">
-        <div className="modalhead">Create a New Idea!</div>
+      <Card className="modal-main">
+        <Card.Title className="modalHead">Create a New Idea!</Card.Title>
+        <Card.Body>
         <form className="inputform" onSubmit={e => handleSubmit(e)}>
           <div>
             <input
@@ -72,13 +76,14 @@ function InputForm(props) {
           </div>
 
           <div>
-            <button className="sumbitbtn">Submit</button>
+            <Button className="sumbitbtn">Submit</Button>
           </div>
         </form>
-        <button onClick={props.hideInputModal} className="closebtn">
-          close
-        </button>
-      </section>
+        </Card.Body>
+        <Button onClick={props.hideInputModal} className="closeCreateBtn">
+          Close
+        </Button>
+      </Card>
     </div>
   );
 }

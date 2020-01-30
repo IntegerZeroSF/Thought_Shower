@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import "../Header/Header.css";
-import InputForm from "../Create/InputForm";
+import React, { useState } from 'react';
+import '../Header/Header.css';
+import InputForm from '../Create/InputForm';
 
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 function CreateBtn(props) {
   let [showInput, setShowInput] = useState(false);
@@ -23,7 +23,7 @@ function CreateBtn(props) {
         >
           <p>Modal</p>
         </InputForm>
-        <Nav.Link className="navBTN"  onClick={showInputModal}>
+        <Nav.Link className='navBTN'  onClick={showInputModal}>
           Create
         </Nav.Link>
       </>

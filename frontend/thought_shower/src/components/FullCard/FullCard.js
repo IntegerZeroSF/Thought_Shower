@@ -69,21 +69,21 @@ export default function FullCard(props) {
         : ''
 
     return (
-        <div className="fullCardBody">
-            <Card className="fullCardCard"> 
+        <div className='fullCardBody'>
+            <Card className='fullCardCard'> 
                 {/* <h1>{user}</h1> */}
                 <Card.Header as="h1">{newTitle}</Card.Header>
-                <Card.Title as="h2" className="fullViewCard">{user}</Card.Title>
-                <Card.Title as="h3" className="fullViewCard">{category}</Card.Title>
-                <p className="fullViewDescrip">{post}</p>
+                <Card.Title as="h2" className='fullViewCard'>{user}</Card.Title>
+                <Card.Title as="h3" className='fullViewCard'>{category}</Card.Title>
+                <p className='fullViewDescrip'>{post}</p>
 
-                <Card.Footer className="button-container-full-view">
-                    <span className={"like-count " + color}>{likes}</span>
-                    <button className="like-button upvote">
-                        <img src="/thumbs_up.png" className="like" />
+                <Card.Footer className='button-container-full-view'>
+                    <span className={'like-count ' + color}>{likes}</span>
+                    <button className='like-button upvote'>
+                        <img src='/thumbs_up.png' className='like' />
                     </button>
-                    <button className="like-button downvote">
-                        <img src="/thumbs_down.png" className="like" />
+                    <button className='like-button downvote'>
+                        <img src='/thumbs_down.png' className='like' />
                     </button>
                 </Card.Footer>
             </Card>

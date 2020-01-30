@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./InputForm.css";
+import './InputForm.css';
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -41,10 +41,10 @@ function InputForm(props) {
   };
   return (
     <div className={showHideClassName}>
-      <Card className="modal-main">
-        <Card.Title className="modalHead">Create a New Idea!</Card.Title>
+      <Card className='modal-main'>
+        <Card.Title className='modalHead'>Create a New Idea!</Card.Title>
         <Card.Body>
-        <form className="inputform" onSubmit={handleSubmit}>
+        <form className='inputform' onSubmit={handleSubmit}>
           <div>
             <input
               className="input"
@@ -70,17 +70,15 @@ function InputForm(props) {
               type="text"
               placeholder="Description"
               onChange={handleChangePost}
-              // rows = "40"
-              // columns = "60"
             ></textarea>
           </div>
 
           <div>
-            <Button type="Submit" className="sumbitbtn">Submit</Button>
+            <Button type='Submit' className='sumbitbtn'>Submit</Button>
           </div>
         </form>
         </Card.Body>
-        <Button onClick={props.hideInputModal} className="closeCreateBtn">
+        <Button onClick={props.hideInputModal} className='closeCreateBtn'>
           Close
         </Button>
       </Card>

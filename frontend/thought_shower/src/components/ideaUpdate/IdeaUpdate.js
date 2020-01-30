@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
-import DeleteBtn from "../Delete/DeleteBtn"
-import "./IdeaUpdate.css"
+import DeleteBtn from '../Delete/DeleteBtn';
+import ''./IdeaUpdate.css';
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -41,12 +41,12 @@ function IdeaUpdate(props){
 
     return (
       <div className={showHideClassName}>
-        <Card className="modal-main">
-          <Card.Title className="modalhead">hi</Card.Title>
-          <form className="form" onSubmit={e => handleSubmit(e)}>
+        <Card className='modal-main'>
+          <Card.Title className='modalhead'>hi</Card.Title>
+          <form className='form' onSubmit={e => handleSubmit(e)}>
             <div>
               <input
-                className="input"
+                className='input'
                 value={category}
                 type="text"
                 placeholder="Category"
@@ -55,7 +55,7 @@ function IdeaUpdate(props){
             </div>
             <div>
               <textarea
-                className="input description"
+                className='input description'
                 value={post}
                 type="text"
                 placeholder="Description"
@@ -65,13 +65,13 @@ function IdeaUpdate(props){
             </div>
   
             <div>
-              <button className="sumbitbtn">Udpate</button>
+              <button className='sumbitbtn'>Udpate</button>
             </div>
           </form>
           <div>
               <DeleteBtn/>
             </div>
-          <button onClick={props.hideIdeaModal} className="closebtn">
+          <button onClick={props.hideIdeaModal} className='closebtn'>
             close
           </button>
         </Card>

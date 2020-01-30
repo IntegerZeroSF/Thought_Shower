@@ -21,6 +21,7 @@ function TitleView(props) {
     console.log("titleview", props);
 
        return (
+<<<<<<< HEAD
           <Card className="container">
             <Card.Header as="h1" style={{ textAlign: "left" }}>{props.title}</Card.Header>
             <h4 style={{ textAlign: "left" }}>{props.category}</h4>
@@ -28,6 +29,18 @@ function TitleView(props) {
             <Card.Body>{props.post}</Card.Body>
             <div className="buttonDiv">
               <UpdateBtn id={props.id}
+=======
+          <div className="container">
+            <h1 style={{ textAlign: "left" }}>{props.title}</h1>
+            <h2 style={{ textAlign: "left" }}>{props.category}</h2>
+            <UpdateBtn id={props.id}
+                      title={props.title}
+                      category={props.category}
+                      post={props.post}
+                      updateIdea={props.updateIdea}
+                      />
+            <DeleteBtn id={props.id} 
+>>>>>>> 5bab91906ed23f871e6c58e00eff73694bc9f36a
                         title={props.title}
 <<<<<<< HEAD
                       deleteIdea={props.deleteIdea}/>

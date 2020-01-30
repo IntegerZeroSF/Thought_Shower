@@ -7,39 +7,27 @@ function DeleteForm(props) {
     ? "modal display-block"
     : "modal display-none";
 
-  const handleChangeTitle = e => {
-    e.preventDefault();
-    setTitle(e.target.value);
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
-
-    props.deleteIdea(title);
-    props.hideDeleteModal()
   };
+
+  const handleDelete = e => {
+    e.preventDefault()
+    props.deleteIdea(props.id);
+    props.hideDeleteModal()
+  }
   return (
     <div className={showHideClassName}>
       <section className="modal-main">
-        <div className="modalhead">Delete Idea!</div>
+        <div className="modalhead">Are you sure you want to delete?</div>
         <form className="inputform" onSubmit={e => handleSubmit(e)}>
-          <div>
-            <input
-              className="input"
-              value={title}
-              type="text"
-              placeholder="Idea Name"
-              onChange={e => handleChangeTitle(e)}
-            ></input>
-          </div>
-
-          <div>
-            <button className="sumbitbtn">Submit</button>
-          </div>
+          <button className="sumbitbtn" onClick={e => handleDelete(e)}>
+            Yes
+          </button>
+          <button onClick={props.hideDeleteModal} className="closebtn">
+            No
+          </button>
         </form>
-        <button onClick={props.hideDeleteModal} className="closebtn">
-          close
-        </button>
       </section>
     </div>
   );

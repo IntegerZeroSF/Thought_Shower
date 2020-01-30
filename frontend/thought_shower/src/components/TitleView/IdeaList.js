@@ -29,7 +29,6 @@ function IdeaList(props) {
               id = {arr._id}
               title = {arr.title}
               category={arr.category}
-              post={arr.post}
               likes={arr.likes}
               color={color}
               updateIdea={props.updateIdea}

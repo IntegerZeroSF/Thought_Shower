@@ -19,14 +19,6 @@ function App() {
   let dataUrl = "http://localhost:4000/ideas";
 
   useEffect(() => {
-    // fetch(dataUrl)
-    //   .then(res => res.json())
-    //   .then(ideaData => {
-    //     setData(ideaData);
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
     axios.get(dataUrl)
       .then(ideas => {
         setData(ideas)
@@ -43,67 +35,22 @@ function App() {
       .catch(err => console.log(err))
   };
 
-  const deleteIdea = title => {
-    let dataUrl1 = dataUrl + "title/" + title;
-    console.log(dataUrl1);
-    fetch(dataUrl1)
-      .then(res => res.json())
-      .then(ideaData => {
-        console.log(ideaData);
-
-        let dataUrl2 = dataUrl + "id/" + ideaData._id;
-        fetch(dataUrl2, {
-          body: JSON.stringify(),
-          method: "delete",
-          headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json"
-          }
-        }).then(deleteIdea => deleteIdea.json());
-        let newData = data
-        newData.pop(ideaData.id);
-        setData(newData)
+  const deleteIdea = id => {
+    axios.delete(dataUrl + '/id/' + id)
+      .then(ideas => {
+        setData(ideas)
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(err => console.log(err))
   };
 
-  const updateIdea = idea => {
-    let dataUrl1 = dataUrl + "title/" + idea.title;
-    console.log(dataUrl1);
-    fetch(dataUrl1)
-      .then(res => res.json())
-      .then(ideaData => {
-        console.log(ideaData);
-
-        let dataUrl2 = dataUrl + "id/" + ideaData._id;
-        fetch(dataUrl2, {
-          body: JSON.stringify(idea),
-          method: "put",
-          headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json"
-          }
-        }).then(updateIdea => updateIdea.json());
-        console.log(data);
-        let n = data.indexOf(`_id=ideaData._id`);
-        console.log(n);
-        // data[n].category = idea.category
-
-        data.forEach(item => {
-          if (item._id === ideaData._id) {
-            console.log(item);
-            data.category = idea.category;
-            console.log(idea.category);
-          }
-        });
-        console.log(data);
+  const updateIdea = (id, idea) => {
+    axios.put(dataUrl + '/id/' + id, idea)
+      .then(ideas => {
+        setData(ideas)
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(err => console.log(err))
   };
+
   console.log(data)
   return (
     <div>
@@ -124,7 +71,7 @@ function App() {
           <div>
 <<<<<<< HEAD
             <Route
-              path="/ideas/:card"
+              path="/ideas"
               render={() => (
                 <IdeaList
                   data={data}

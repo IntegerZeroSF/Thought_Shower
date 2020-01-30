@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./TitleView.css";
+// import "./TitleView.css";
 import DeleteBtn from "../Delete/DeleteBtn"
 import UpdateBtn from "../Update/UpdateBtn"
 import TitleView from "./TitleView"

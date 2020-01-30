@@ -72,10 +72,6 @@ export default function FullCard(props) {
             <h3>{category}</h3>
             <p>{post}</p>
 
-            <div>
-                {commentList}
-            </div>
-
             <div className="button-container">
                 <span className={"like-count " + color}>{likes}</span>
                 <button className="like-button upvote">
@@ -84,6 +80,10 @@ export default function FullCard(props) {
                 <button className="like-button downvote">
                     <img src="/thumbs_down.png" className="like" />
                 </button>
+            </div>
+
+            <div>
+                {commentList}
             </div>
 
             <form onSubmit={submitComment}>

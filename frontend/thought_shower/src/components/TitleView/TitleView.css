@@ -4,7 +4,7 @@
     border: 2px solid black;
     border-radius: 10px;
     margin: 20px auto;
-    padding: 0 10px;
+    padding: 0;
     /* line-height: 10px; */
 }
 
@@ -101,4 +101,18 @@
 
 .titleViewButton {
     margin: 1vh 0;
+}
+
+.flexit {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-group {
+    width: 60%;
+    margin: 6vh auto 0 auto;
+}
+
+.btn-link {
+    width: 90px;
 }

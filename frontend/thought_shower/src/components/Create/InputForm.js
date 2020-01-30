@@ -44,14 +44,14 @@ function InputForm(props) {
       <Card className="modal-main">
         <Card.Title className="modalHead">Create a New Idea!</Card.Title>
         <Card.Body>
-        <form className="inputform" onSubmit={e => handleSubmit(e)}>
+        <form className="inputform" onSubmit={handleSubmit}>
           <div>
             <input
               className="input"
               value={title}
               type="text"
               placeholder="Idea Name"
-              onChange={e => handleChangeTitle(e)}
+              onChange={handleChangeTitle}
             ></input>
           </div>
           <div>
@@ -60,7 +60,7 @@ function InputForm(props) {
               value={category}
               type="text"
               placeholder="Category"
-              onChange={e => handleChangeCategory(e)}
+              onChange={handleChangeCategory}
             ></input>
           </div>
           <div>
@@ -69,7 +69,7 @@ function InputForm(props) {
               value={post}
               type="text"
               placeholder="Description"
-              onChange={e => handleChangePost(e)}
+              onChange={handleChangePost}
               // rows = "40"
               // columns = "60"
             ></textarea>

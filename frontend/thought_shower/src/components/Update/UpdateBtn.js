@@ -33,7 +33,7 @@ function UpdateBtn(props) {
               type="button"
               onClick={showUpdateModal}
             >
-              Update an Idea
+              Update Idea
             </Button>
           </div>
   );

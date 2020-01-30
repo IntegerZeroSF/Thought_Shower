@@ -20,11 +20,18 @@ function TitleView(props) {
   const hideIdeaModal = () => {
     setShowIdea(false);
   };
-  console.log("titleview", props);
+
+  const newTitle = []
+  if (props.title) {
+    for (let i = 0; i < props.title.length; i++) {
+      i ? newTitle.push(props.title.charAt(i).toLowerCase()) : newTitle.push(props.title.charAt(i).toUpperCase())
+    }
+    newTitle.join('')
+  }
 
   return (
     <Card className='container' style={{ padding: '0' }}>
-      <Card.Header as='h1'>{props.title}</Card.Header>
+      <Card.Header as='h1'>{newTitle}</Card.Header>
 
       <Card.Body>
         <Card.Title as='h2'>{props.category}</Card.Title>

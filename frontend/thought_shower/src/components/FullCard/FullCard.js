@@ -74,7 +74,7 @@ export default function FullCard(props) {
                 {/* <h1>{user}</h1> */}
                 <Card.Header as="h1">{newTitle}</Card.Header>
                 <Card.Title as="h2" className='fullViewCard'>{user}</Card.Title>
-                <Card.Title as="h3" className='fullViewCard'>{category}</Card.Title>
+                <Card.Title as="h3" className='fullViewCard'>Category: {category}</Card.Title>
                 <p className='fullViewDescrip'>{post}</p>
 
                 <Card.Footer className='button-container-full-view'>

@@ -10,7 +10,7 @@ import Home from "./components/Home/Home.js";
 import Header from "./components/Header/Header.js";
 import IdeaList from "./components/TitleView/IdeaList.js";
 import AboutUs from "./components/About Us/About Us.js"
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import FullCard from './components/FullCard/FullCard'
 import Login from './components/Login/Login'
 import SignUp from './components/Login/SignUp'
@@ -20,11 +20,21 @@ import axios from 'axios'
 function App() {
   let [data, setData] = useState()
   let [isLoggedIn, setLogin] = useState(false)
+  let [user, setUser] = useState()
 
   let dataUrl = "http://localhost:4000/ideas";
 
   useEffect(() => {
-    if (localStorage.token) setLogin(true)
+    if (localStorage.token) {
+      axios.get('http://localhost:4000/auth/user', {
+            headers: {
+                "x-auth-token": localStorage.token
+            }
+        }).then(res => {
+            setLogin(true)
+            setUser(res.data)
+        })
+    }
 
     axios.get(dataUrl)
       .then(ideas => {
@@ -36,16 +46,18 @@ function App() {
   const handleLogin = user => {
     axios.post('http://localhost:4000/auth', user)
       .then(res => {
-            localStorage.token = res.data.token
-            setLogin(true)
+        localStorage.token = res.data.token
+        setLogin(true)
+        setUser(res.data.user)
       }).catch(err => console.log(err))
   }
 
   const handleSignUp = user => {
     axios.post('http://localhost:4000/users', user)
       .then(res => {
-            localStorage.token = res.data.token
-            setLogin(true)
+        localStorage.token = res.data.token
+        setLogin(true)
+        setUser(res.data.user)
       }).catch(err => console.log(err))
   }
 
@@ -55,6 +67,7 @@ function App() {
   }
 
   const createIdea = Idea => {
+    console.log(Idea)
     axios.post(dataUrl, Idea)
       .then(ideas => {
         let newData = ideas
@@ -78,34 +91,37 @@ function App() {
       })
       .catch(err => console.log(err))
   };
-
+  console.log(isLoggedIn)
+  console.log(user)
   return (
     <div>
-    <Helmet><title>Thought Shower</title></Helmet>
+      <Helmet><title>Thought Shower</title></Helmet>
       <header className="header">
         <div>
-          <Header createIdea={createIdea} handleLogout={handleLogout} />
+          <Header user={user} createIdea={createIdea} handleLogout={handleLogout} />
         </div>
       </header>
       <main>
         <Route
           exact
           path="/"
-          render={() => <Home createIdea={createIdea} />}
+          render={() => <Home user={user} createIdea={createIdea} />}
         />
         <Route path="/ideas"
-          render={() => <IdeaList data={data}
+          render={() => <IdeaList 
+            user={user}
+            data={data}
             updateIdea={updateIdea}
             deleteIdea={deleteIdea} />}
         />
         <Route path="/aboutus"
           render={() => <AboutUs />} />
         <Route path="/fullview/:id"
-          render={props => <FullCard {...props}/>} />
+          render={props => <FullCard user={user} {...props} />} />
         <Route path="/login"
-          render={() => <Login handleLogin={handleLogin}/>} />
+          render={() => <Login handleLogin={handleLogin} />} />
         <Route path="/signup"
-          render={() => <SignUp handleSignUp={handleSignUp}/>} />
+          render={() => <SignUp handleSignUp={handleSignUp} />} />
       </main>
     </div>
   );

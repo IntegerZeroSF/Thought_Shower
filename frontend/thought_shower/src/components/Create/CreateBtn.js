@@ -20,6 +20,7 @@ function CreateBtn(props) {
           showInput={showInput}
           hideInputModal={hideInputModal}
           createIdea={props.createIdea}
+          user={props.user}
         >
           <p>Modal</p>
         </InputForm>

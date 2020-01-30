@@ -25,7 +25,7 @@ function Home(props) {
             Click the button below to get started on submitting your own ideas.
           </Card.Text>
           <Button variant="primary" block>
-            <HomeCreateBtn createIdea={props.createIdea} />
+            <HomeCreateBtn user={props.user} createIdea={props.createIdea} />
           </Button>
         </Card.Body>
       </Card>

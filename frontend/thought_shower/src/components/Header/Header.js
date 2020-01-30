@@ -18,7 +18,7 @@ function Header(props) {
         </Navbar.Brand>
         <Nav className='mr-auto'>
           <Nav.Link href="/">Home</Nav.Link>
-          <CreateBtn createIdea={props.createIdea}/>
+          <CreateBtn user={props.user} createIdea={props.createIdea}/>
           <Nav.Link href="/ideas">Browse</Nav.Link>
           <Nav.Link href="/aboutus">About Us</Nav.Link>
         </Nav>

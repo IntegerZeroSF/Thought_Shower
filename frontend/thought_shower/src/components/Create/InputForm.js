@@ -30,53 +30,53 @@ function InputForm(props) {
     e.preventDefault();
 
     const Idea = {
+      user: props.user.name || 'anonymous',
       title: title,
       category: category,
       post: post
     };
-    console.log(Idea)
     props.createIdea(Idea)
     props.hideInputModal()
-    
+
   };
   return (
     <div className={showHideClassName}>
       <Card className='modal-main'>
         <Card.Title className='modalHead'>Create a New Idea!</Card.Title>
         <Card.Body>
-        <form className='inputform' onSubmit={handleSubmit}>
-          <div>
-            <input
-              className="input"
-              value={title}
-              type="text"
-              placeholder="Idea Name"
-              onChange={handleChangeTitle}
-            ></input>
-          </div>
-          <div>
-            <input
-              className="input"
-              value={category}
-              type="text"
-              placeholder="Category"
-              onChange={handleChangeCategory}
-            ></input>
-          </div>
-          <div>
-            <textarea
-              className="input description"
-              value={post}
-              type="text"
-              placeholder="Description"
-              onChange={handleChangePost}
-            ></textarea>
-          </div>
+          <form className='inputform' onSubmit={handleSubmit}>
+            <div>
+              <input
+                className="input"
+                value={title}
+                type="text"
+                placeholder="Idea Name"
+                onChange={handleChangeTitle}
+              ></input>
+            </div>
+            <div>
+              <input
+                className="input"
+                value={category}
+                type="text"
+                placeholder="Category"
+                onChange={handleChangeCategory}
+              ></input>
+            </div>
+            <div>
+              <textarea
+                className="input description"
+                value={post}
+                type="text"
+                placeholder="Description"
+                onChange={handleChangePost}
+              ></textarea>
+            </div>
 
-          <div>
-            <Button type='Submit' className='sumbitbtn'>Submit</Button>
-          </div>
-        </form>
+            <div>
+              <Button type='Submit' className='sumbitbtn'>Submit</Button>
+            </div>
+          </form>
         </Card.Body>
         <Button onClick={props.hideInputModal} className='closeCreateBtn'>
           Close

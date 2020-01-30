@@ -19,6 +19,7 @@ function HomeCreateBtn(props) {
                 Create
             </div>
             <InputForm
+                user={props.user}
                 showInput={showInput}
                 hideInputModal={hideInputModal}
                 createIdea={props.createIdea}

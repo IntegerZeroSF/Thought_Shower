@@ -1,0 +1,36 @@
+.fullCardBody {
+    margin: 5vh;
+    padding-bottom: 3vh;
+    width: auto;
+    
+}
+
+.fullCardCard {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+
+}
+
+.fullViewCard {
+    padding: 1vh;
+}
+
+.button-container-full-view {
+    position: relative;
+    bottom: 0;
+    margin-top: 15px;
+    width: 100%;
+    text-align: right; 
+}
+
+.fullViewDescrip {
+    margin: 2vh;
+}
+
+.commentsDiv {
+    margin: 1vh;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+}
+
+.commitForm {
+    margin: 2vh;
+}

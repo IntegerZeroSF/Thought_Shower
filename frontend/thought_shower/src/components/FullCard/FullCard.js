@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import "./FullCard.css"
+
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 export default function FullCard(props) {
     let [data, setData] = useState()
@@ -56,46 +60,50 @@ export default function FullCard(props) {
     const commentList = comments
         ? comments.map(com => {
             return (
-                <div>
-                    <h5>{com.user}</h5>
-                    <p>{com.message}</p>
-
-                </div>
+                <Card className='commentsDiv'>
+                    <Card.Header as="h3">{com.user}</Card.Header>
+                    <Card.Body>{com.message}</Card.Body>
+                </Card>
             )
         })
         : ''
 
     return (
-        <div>
-            <h1>{user}</h1>
-            <h2>{newTitle}</h2>
-            <h3>{category}</h3>
-            <p>{post}</p>
+        <div className="fullCardBody">
+            <Card className="fullCardCard"> 
+                {/* <h1>{user}</h1> */}
+                <Card.Header as="h1">{newTitle}</Card.Header>
+                <Card.Title as="h2" className="fullViewCard">{user}</Card.Title>
+                <Card.Title as="h3" className="fullViewCard">{category}</Card.Title>
+                <p className="fullViewDescrip">{post}</p>
 
-            <div className="button-container">
-                <span className={"like-count " + color}>{likes}</span>
-                <button className="like-button upvote">
-                    <img src="/thumbs_up.png" className="like" />
-                </button>
-                <button className="like-button downvote">
-                    <img src="/thumbs_down.png" className="like" />
-                </button>
-            </div>
-
+                <Card.Footer className="button-container-full-view">
+                    <span className={"like-count " + color}>{likes}</span>
+                    <button className="like-button upvote">
+                        <img src="/thumbs_up.png" className="like" />
+                    </button>
+                    <button className="like-button downvote">
+                        <img src="/thumbs_down.png" className="like" />
+                    </button>
+                </Card.Footer>
+            </Card>
+            <br/>
+            <br/>
             <div>
                 {commentList}
             </div>
-
-            <form onSubmit={submitComment}>
-                <textarea
-                    type="text"
-                    placeholder="Write a comment"
-                    value={newComment}
-                    onChange={updateComment}
-                />
-                <br />
-                <button type="Sumbit">Submit</button>
-            </form>
+            <div className='commitForm'>
+                <form onSubmit={submitComment}>
+                    <textarea
+                        type="text"
+                        placeholder="Write a comment"
+                        value={newComment}
+                        onChange={updateComment}
+                    />
+                    <br />
+                    <Button type="Sumbit">Submit</Button>
+                </form>
+            </div>
         </div>
     )
 }

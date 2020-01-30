@@ -28,7 +28,7 @@ function Home(props) {
           <Card.Text className="homeCardBody">
             Click the button below to get started on submitting your own ideas.
           </Card.Text>
-          <Button createIdea={props.createIdea} block>
+          <Button onclick="createIdea={props.createIdea}" block>
             Create
           </Button>
         </Card.Body>

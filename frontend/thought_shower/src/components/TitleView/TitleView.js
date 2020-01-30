@@ -42,7 +42,7 @@ function TitleView(props) {
       </Card.Body>
 
       <Card.Footer className="flexit">
-        <Link to={"/fullview/" + props.id} className='btn-link'>View Card</Link>
+        <Button href={"/fullview/" + props.id} className='btn-link'>View Card</Button>
         <div className="button-container">
           <span className={"like-count " + props.color}>{props.likes}</span>
           <button className="like-button upvote">

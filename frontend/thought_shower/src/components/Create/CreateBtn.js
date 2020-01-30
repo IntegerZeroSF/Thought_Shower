@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-
+import "../Header/Header.css";
 import InputForm from "../Create/InputForm";
-import Button from "react-bootstrap/Button";
 
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -24,9 +23,9 @@ function CreateBtn(props) {
         >
           <p>Modal</p>
         </InputForm>
-        <Button className="navBTN"  onClick={showInputModal} variant="primary" block>
+        <Nav.Link className="navBTN"  onClick={showInputModal}>
           Create
-        </Button>
+        </Nav.Link>
       </>
   );
 }

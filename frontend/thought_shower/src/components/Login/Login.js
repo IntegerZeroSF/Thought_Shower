@@ -36,7 +36,7 @@ export default function Login(props) {
                 />
                 <br/>
                 <input 
-                    type="text"
+                    type="password"
                     name="password"
                     placeholder="Password"
                     autoComplete="off"

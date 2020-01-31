@@ -39,9 +39,10 @@ export default function FullCard(props) {
 
     const submitComment = e => {
         e.preventDefault()
+        const name = props.user ? props.user.name : 'anonymous'
         axios.post("http://localhost:4000/ideas/comments/" + id,
             {
-                user: props.user.name,
+                user: name,
                 message: newComment
             }).then(res => {
                 setData(res)
@@ -49,7 +50,7 @@ export default function FullCard(props) {
             })
     }
 
-    const handleLike = e => {
+    const handleLike = () => {
         if (props.user) {
             axios.post("http://localhost:4000/ideas/likes/" + id + "/true", props.user)
                 .then(res => setData(res))
@@ -59,7 +60,7 @@ export default function FullCard(props) {
         }
     }
 
-    const handleDislike = e => {
+    const handleDislike = () => {
         if (props.user) {
             axios.post("http://localhost:4000/ideas/likes/" + id + "/false", props.user)
                 .then(res => setData(res))

@@ -61,17 +61,19 @@ export default function SignUp(props) {
                 />
                 <br/>
                 <input 
-                    type="text"
+                    type="password"
                     name="password"
                     placeholder="Password"
+                    autoComplete="off"
                     value={password}
                     onChange={handlePassChange}
                 />
                 <br/>
                 <input 
-                    type="text"
+                    type="password"
                     name="confirm"
-                    placeholder="Confirm"
+                    placeholder="Confirm Password"
+                    autoComplete="off"
                     value={confirm}
                     onChange={handleConfirmChange}
                 />

@@ -31,6 +31,7 @@ function InputForm(props) {
 
     const Idea = {
       user: props.user ? props.user.name : 'anonymous',
+      uid: props.user ? props.user._id : '',
       title: title,
       category: category,
       post: post

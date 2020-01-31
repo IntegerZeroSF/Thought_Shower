@@ -8,38 +8,25 @@ import TitleView from "./TitleView"
 // const URL = 'https://thought-shower.herokuapp.com'
 
 function IdeaList(props) {
-    let [showIdea, setShowIdea] = useState(false);
   if (props.data) {
-    console.log("idealist",props)
-    
-    const showIdeaModal = () => {
-      setShowIdea(true);
-    };
-    const hideIdeaModal = () => {
-      setShowIdea(false);
-    };
-    console.log("titleview", props);
-
-     const ideas = props.data.data.map(arr => {
-      const color =
-        arr.likes >= 0 ? (arr.likes > 0 ? "green" : "black") : "red";
+    const ideas = props.data.data.map(arr => {
       return (
         <div>
-        <TitleView
-              id = {arr._id}
-              title = {arr.title}
-              category={arr.category}
-              likes={arr.likes}
-              color={color}
-              updateIdea={props.updateIdea}
-              deleteIdea={props.deleteIdea}
-              />
-            
-          
+          <TitleView
+            id={arr._id}
+            // uid={arr.uid}
+            // title={arr.title}
+            // category={arr.category}
+            // likes={arr.likes}
+            // likedBy={arr.likedBy}
+            updateIdea={props.updateIdea}
+            deleteIdea={props.deleteIdea}
+            user={props.user}
+            data={arr}
+          />
         </div>
       );
     });
-
     return <div>{ideas}</div>;
   } else {
     return <></>;

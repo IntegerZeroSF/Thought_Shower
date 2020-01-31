@@ -53,15 +53,15 @@ The user will come to the site.  He or she will be presented with a list of idea
 
 | Components and Descriptions | 
 | --- | :---: | 
-|	Header -- Provide the user with links to create, browse, about us and back to home throughout the application. |
-| Home -- The landing page for the application.  Presents the user with a browse the existing ideas or create a new one.|
-|	TitleView --  A place to view all of the existing ideas. From here the user can add, update, or delete an idea.
-| FullCard -- Present the user with the full details of the idea.
-|	Create --	Provide the user a place to add a new idea to the site.|
-|	Update -- Allow the user to update an existing idea. 	| 
-|	Delete -- Allow the user to delete an idea.  |
-|	Login - Allows the user to create a user ID and password and then login |
-| About Us -- Give an explaination of the site.
+- Header -- Provide the user with links to create, browse, about us and back to home throughout the application. 
+- Home -- The landing page for the application.  Presents the user with a browse the existing ideas or create a new one.
+-	TitleView --  A place to view all of the existing ideas. From here the user can add, update, or delete an idea.
+- FullCard -- Present the user with the full details of the idea.
+-	Create --	Provide the user a place to add a new idea to the site.
+-	Update -- Allow the user to update an existing idea. 	 
+-	Delete -- Allow the user to delete an idea.  
+-	Login - Allows the user to create a user ID and password and then login 
+- About Us -- Give an explaination of the site.
 
 
 ## Time Frames

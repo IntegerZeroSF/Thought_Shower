@@ -51,8 +51,8 @@ The user will come to the site.  He or she will be presented with a list of idea
 ## Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
 
-| Components and Descriptions | 
-| --- | :---: | 
+## Components and Descriptions 
+
 - Header -- Provide the user with links to create, browse, about us and back to home throughout the application. 
 - Home -- The landing page for the application.  Presents the user with a browse the existing ideas or create a new one.
 -	TitleView --  A place to view all of the existing ideas. From here the user can add, update, or delete an idea.

@@ -35,6 +35,7 @@ export default function Login(props) {
                     placeholder="Email"
                     value={email}
                     required="required"
+                    autoComplete="off"
                     onChange={handleEmailChange}
                 />
                 <br/>

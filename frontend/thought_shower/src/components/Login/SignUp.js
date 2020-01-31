@@ -52,6 +52,7 @@ export default function SignUp(props) {
                     placeholder="Name"
                     value={name}
                     required="required"
+                    autoComplete="off"
                     onChange={handleNameChange}
                 />
                 <br/>
@@ -61,6 +62,7 @@ export default function SignUp(props) {
                     placeholder="Email"
                     value={email}
                     required="required"
+                    autoComplete="off"
                     onChange={handleEmailChange}
                 />
                 <br/>

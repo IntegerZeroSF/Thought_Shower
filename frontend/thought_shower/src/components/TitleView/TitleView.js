@@ -3,6 +3,8 @@ import './TitleView.css'
 import UpdateBtn from '../Update/UpdateBtn'
 import DeleteBtn from '../Delete/DeleteBtn'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+
 
 import Card from 'react-bootstrap/Card'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
@@ -95,7 +97,7 @@ function TitleView(props) {
       </Card.Body>
 
       <Card.Footer className='flexit'>
-        <Button href={'/fullview/' + props.id} className='btn-link'>View Card</Button>
+        <Link to={'/fullview/' + props.id} className='btn-link'><Button>View Card</Button></Link>
         <div className='button-container'>
           <span className={'like-count ' + color}>{likes}</span>
           <button className={green ? 'like-button upvote-selected' : 'like-button upvote'} onClick={handleLike}>

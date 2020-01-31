@@ -113,7 +113,22 @@ Front-end: axios, react-bootstrap, react-helmet,react-router, react-router-dom, 
 
 	if (props.user) props.history.push('/')
 
-
+---
+	<Card className='fullCardCard'> 
+					<Card.Header as="h1">{newTitle}</Card.Header>
+					<Card.Title as="h2" className='fullViewCard'>{user}</Card.Title>
+					<Card.Title as="h3" className='fullViewCard'>Category: {category}</Card.Title>
+					<p className='fullViewDescrip'>{post}</p>
+					<Card.Footer className='button-container-full-view'>
+							<span className={'like-count ' + color}>{likes}</span>
+							<button className={green ? 'like-button upvote-selected' : 'like-button upvote'} onClick={handleLike}>
+									<img src='/thumbs_up.png' className='like' />
+							</button>
+							<button className={red ? 'like-button downvote-selected' : 'like-button downvote'} onClick={handleDislike}>
+									<img src='/thumbs_down.png' className='like' />
+							</button>
+					</Card.Footer>
+			</Card>
 ### CSS Issues ###
 We had an issue getting the application header to view properly on a mobile view.
 

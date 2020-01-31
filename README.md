@@ -6,9 +6,13 @@
 Creating a Web applicaiton called Thought_Shower that will allow site visitor to populate ideas that can be viewed by the general puplic.  The general form will allow an indiviual to generate / input their idea.  It will the be displayed on the general site for other to view.
 
 ## Project Links
-
+Front-end
 - [Front-end Repo: https://github.com/IntegerZeroSF/Thought_Shower]()
+
+
+Back-end
 - [Back-end Repo: https://github.com/KJFreys1/thought-shower-backend]()
+- [Back deployment site: https://thought-shower.herokuapp.com/ideas]()
 
 ## Wireframes
 

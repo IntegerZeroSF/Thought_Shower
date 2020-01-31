@@ -54,7 +54,7 @@ function App() {
       .catch(err => console.log(err))
   };
 
-  console.log(data)
+  // console.log(data)
   return (
     <div>
     <Helmet><title>Thought Shower</title></Helmet>

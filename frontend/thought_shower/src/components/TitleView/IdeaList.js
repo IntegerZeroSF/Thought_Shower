@@ -18,7 +18,7 @@ function IdeaList(props) {
     const hideIdeaModal = () => {
       setShowIdea(false);
     };
-    console.log("titleview", props);
+    console.log("ideaview", props);
 
      const ideas = props.data.data.map(arr => {
       const color =

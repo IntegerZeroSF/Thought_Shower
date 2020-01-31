@@ -104,21 +104,23 @@ Front-end: axios, react-bootstrap, react-helmet,react-router, react-router-dom, 
 
 ## Code Snippet
 
+	const name = user.name.split(' ').map(arr => {
+				let word = arr.charAt(0).toUpperCase()
+				for (let i = 1; i < arr.length; i++) {
+					word += arr.charAt(i).toLowerCase()
+				}
+				return word
+			})
+-------------
 
+	if (props.user) props.history.push('/')
 
-## Issues and Resolutions
-
-### Error ###
-
-
-### Resolution ###
-
-### Error ###
-
-### Resolution ###
 
 ### CSS Issues ###
 We had an issue getting the application header to view properly on a mobile view.
+
+### Resolution ###
+Was not able to get the Bootstrap dropdown to work correctly with react.
 
 ### Testing Issue ###
 Testing the back-end and front-end each a couple issues.  On the beck-end side it was difficult to create a test that would delete a user comment properly and be able to verify it.  On the front-end we had one issue trying to test the full detals view.  We also had a difficult time getting the front-end testing just to work since it had been a while.

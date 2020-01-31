@@ -20,7 +20,7 @@ export default function FullCard(props) {
     }, [])
 
     const card = data
-    const { user, category, title, post, comments, likes, favorites } = card ? card.data : 0
+    const { user, category, title, post, comments, likes, likedBy } = card ? card.data : 0
     const newTitle = []
 
     if (title) {
@@ -50,7 +50,17 @@ export default function FullCard(props) {
     }
 
     const handleLike = e => {
+        if (props.user) {
+            setGreen(true)
+            if (red) setRed(false)
+        }
+    }
 
+    const handleDislike = e => {
+        if (props.user) {
+            setRed(true)
+            if (green) setGreen(false)
+        }
     }
 
     const color = likes
@@ -65,7 +75,7 @@ export default function FullCard(props) {
                     <Card.Body>{com.message}</Card.Body>
                 </Card>
             )
-        })
+            })
         : ''
 
     return (
@@ -79,10 +89,10 @@ export default function FullCard(props) {
 
                 <Card.Footer className='button-container-full-view'>
                     <span className={'like-count ' + color}>{likes}</span>
-                    <button className='like-button upvote'>
+                    <button className={green ? 'like-button upvote-selected' : 'like-button upvote'} onClick={handleLike}>
                         <img src='/thumbs_up.png' className='like' />
                     </button>
-                    <button className='like-button downvote'>
+                    <button className={red ? 'like-button downvote-selected' : 'like-button downvote'} onClick={handleDislike}>
                         <img src='/thumbs_down.png' className='like' />
                     </button>
                 </Card.Footer>

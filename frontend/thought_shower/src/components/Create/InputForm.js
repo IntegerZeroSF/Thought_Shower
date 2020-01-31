@@ -30,7 +30,7 @@ function InputForm(props) {
     e.preventDefault();
 
     const Idea = {
-      user: props.user.name || 'anonymous',
+      user: props.user ? props.user.name : 'anonymous',
       title: title,
       category: category,
       post: post

@@ -7,8 +7,8 @@ Creating a Web applicaiton called Thought_Shower that will allow site visitor to
 
 ## Project Links
 
-- [Repo: https://github.com/IntegerZeroSF/Thought_Shower]()
-- []()
+- [Front-end Repo: https://github.com/IntegerZeroSF/Thought_Shower]()
+- [Back-end Repo: https://github.com/KJFreys1/thought-shower-backend]()
 
 ## Wireframes
 
@@ -46,15 +46,18 @@ The user will come to the site.  He or she will be presented with a list of idea
 ## Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
 
-| Components | Description | 
-| --- | :---: |  
-| Home | 
-|  |	|
-|  | 	| 
-| 	|  |
-|  | |
-|  | |
-|  |	|
+| Components and Descriptions | 
+| --- | :---: | 
+|	Header -- Provide the user with links to create, browse, about us and back to home throughout the application. |
+| Home -- The landing page for the application.  Presents the user with a browse the existing ideas or create a new one.|
+|	TitleView --  A place to view all of the existing ideas. From here the user can add, update, or delete an idea.
+| FullCard -- Present the user with the full details of the idea.
+|	Create --	Provide the user a place to add a new idea to the site.|
+|	Update -- Allow the user to update an existing idea. 	| 
+|	Delete -- Allow the user to delete an idea.  |
+|	Login - Allows the user to create a user ID and password and then login |
+| About Us -- Give an explaination of the site.
+
 
 ## Time Frames
 
@@ -62,28 +65,38 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Wireframes | H | 2hrs|  |  |
-| CSS | H | 5hrs|  |  |
-| Backend running | H | 1hrs|  | |
-| Backend completed 	| H | 1hrs |  |  |
-| Backend tested 	| H | 2hrs |  | |
-| Backend Deployed 	| H | 2hrs |  |  |
-| Home 	| H | 2hrs | |  |
-| About 	| M | 2hrs | |  |
-| Card List 	| H | 2hrs | |  |
-| Card | M | 2hrs |  |  |
-| Input Form | H | 2hrs |  |  |
-| Update  | M | 2hrs |  |  |
-| Delete | M | 2hrs |  |  |
-| CreateUser | L | 2hrs |  |  |
-| MaintainUser | L | 2hrs |  |  |
-| DeleteUser | L | 2hrs |  |  |
-| Search | L | 2hrs |  |  |
+| Wireframes | H | 2hrs| 2 | 2 |
+| CSS | H | 5hrs| 20 | 20 |
+| Backend running | H | 1hrs| 1 |1 |
+| Backend completed 	| H | 1hrs |1  |1  |
+| Backend tested 	| H | 2hrs | 3 |3 |
+| Backend Deployed 	| H | 2hrs | 1 | 1 |
+| Home 	| H | 2hrs | 3| 3 |
+| About 	| M | 2hrs |1 |1  |
+| Card List 	| H | 2hrs |1 |1  |
+| Card | M | 2hrs | 2 |2  |
+| Input Form | H | 2hrs |3  |3  |
+| Update  | M | 2hrs | 1 |1  |
+| Delete | M | 2hrs |  1| 1 |
+| CreateUser | L | 2hrs | 2 |2  |
+| MaintainUser | L | 2hrs | 2 |2  |
+| DeleteUser | L | 2hrs | 2 |2  |
+| Search | L | 2hrs | 0 |0  |
 | Verify and Debug | H | 10hrs |  |  |
 | Total | H | 44hrs|  |  |
 
 ## Additional Libraries
+React, React-Bootstrap, React-Helmet, Mongoose, Express,
+HTML5, CSS3, and anything else we may have come up with!
 
+## Installation Instructions
+
+Clone the code from the GitHub repositories above.
+for the front-end and back-end you will need to install the following dependencies.
+
+Back-end: body-parser, cors, express, jsonwebtoken, bcryptjs,config, mongoose, nodemon, mocha, chai, supertest
+
+Front-end: axios, react-bootstrap, react-helmet,react-router, react-router-dom, react-scripts,   enzyme-adapter-react-15
 
 ## Code Snippet
 
@@ -93,6 +106,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 ### Error ###
 
+
 ### Resolution ###
 
 ### Error ###
@@ -100,5 +114,15 @@ Time frames are also key in the development cycle.  You have limited time to cod
 ### Resolution ###
 
 ### CSS Issues ###
+We had an issue getting the application header to view properly on a mobile view.
+
+### Testing Issue ###
+Testing the back-end and front-end each a couple issues.  On the beck-end side it was difficult to create a test that would delete a user comment properly and be able to verify it.  On the front-end we had one issue trying to test the full detals view.  We also had a difficult time getting the front-end testing just to work since it had been a while.
+
+### Resolution ###
+On the back-end was eventually able to get the comment to delete with proper verification.  There was some user error getting this to work.  
+
+On the front-end we had to modify part of the code for the full detail view so the test was complete successfully.
+
 
  

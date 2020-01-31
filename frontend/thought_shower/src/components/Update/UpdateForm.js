@@ -1,44 +1,44 @@
-import React, { useState } from "react";
-import "./UpdateForm.css";
+import React, { useState } from "react"
+import "./UpdateForm.css"
 
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 function UpdateForm(props) {
-  let [title, setTitle] = useState(props.title);
-  let [category, setCategory] = useState(props.category);
-  let [post, setPost] = useState(props.post);
+  let [title, setTitle] = useState(props.title)
+  let [category, setCategory] = useState(props.category)
+  let [post, setPost] = useState(props.post)
   
   const showHideClassName = props.showUpdate
     ? "modal display-block"
-    : "modal display-none";
+    : "modal display-none"
 
   const handleChangeTitle = e => {
-    e.preventDefault();
-    setTitle(e.target.value);
-  };
+    e.preventDefault()
+    setTitle(e.target.value)
+  }
   const handleChangeCategory = e => {
-    e.preventDefault();
-    setCategory(e.target.value);
-  };
+    e.preventDefault()
+    setCategory(e.target.value)
+  }
   const handleChangePost = e => {
-    e.preventDefault();
-    setPost(e.target.value);
-  };
+    e.preventDefault()
+    setPost(e.target.value)
+  }
 
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
 
     const idea = {
       title: title,
       category: category,
       post: post
-    };
+    }
 
-    props.updateIdea(props.id, idea);
+    props.updateIdea(props.id, idea)
     props.hideUpdateModal()
    
-  };
+  }
 
    return (
     <div className={showHideClassName}>
@@ -52,7 +52,8 @@ function UpdateForm(props) {
               value={title}
               type="text"
               placeholder="Idea Name"
-              onChange={e => handleChangeTitle(e)}
+              required="required"
+              onChange={handleChangeTitle}
             ></input>
           </div>
           <div>
@@ -61,7 +62,8 @@ function UpdateForm(props) {
               value={category}
               type="text"
               placeholder="Category"
-              onChange={e => handleChangeCategory(e)}
+              required="required"
+              onChange={handleChangeCategory}
             ></input>
           </div>
           <div>
@@ -70,12 +72,13 @@ function UpdateForm(props) {
               value={post}
               type="text"
               placeholder="Description"
-              onChange={e => handleChangePost(e)}
+              required="required"
+              onChange={handleChangePost}
             ></textarea>
           </div>
 
           <div>
-            <Button  className="sumbitbtn">Submit</Button >
+            <Button type="Submit" className="sumbitbtn">Submit</Button >
           </div>
         </form>
         </Card.Body>
@@ -84,7 +87,7 @@ function UpdateForm(props) {
         </Button>
       </Card>
     </div>
-  );
+  )
 }
 
-export default UpdateForm;
+export default UpdateForm

@@ -1,14 +1,12 @@
-import React from 'react';
-import './Home.css';
-import CreateBtn from '../Create/CreateBtn';
-import TitleView from '../TitleView/TitleView';
-import { Link } from 'react-router-dom';
+import React from "react"
+import "./Home.css"
+import HomeCreateBtn from "../Create/HomeCreateBtn"
+import { Link } from "react-router-dom"
 
 
-import Button from 'react-bootstrap/Button';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button'
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Card from 'react-bootstrap/Card'
 
 function Home(props) {
   return (
@@ -26,15 +24,15 @@ function Home(props) {
           <Card.Text className='homeCardBody'>
             Click the button below to get started on submitting your own ideas.
           </Card.Text>
-          <Button onclick="createIdea={props.createIdea}" block>
-            Create
+          <Button variant="primary" block>
+            <HomeCreateBtn user={props.user} createIdea={props.createIdea} />
           </Button>
         </Card.Body>
       </Card>
       <br/>
       <br/>
       <Card className='cardDiv'>
-        <Card.Header className='0homeCardTitle'>Browse your own Idea</Card.Header>
+        <Card.Header className='homeCardTitle'>Browse your own Idea</Card.Header>
         <Card.Body>
           <Card.Text className='homeCardBody'>
             Here you can browser for all kinds of ideas or inspiration. 
@@ -47,7 +45,7 @@ function Home(props) {
         </Card.Body>
       </Card>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

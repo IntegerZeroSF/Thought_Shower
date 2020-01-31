@@ -1,48 +1,24 @@
-import React, { useState, useEffect } from "react";
-// import "./TitleView.css";
-import DeleteBtn from "../Delete/DeleteBtn";
-import UpdateBtn from "../Update/UpdateBtn";
-import TitleView from "./TitleView";
-
-// const axios = require('axios').default;
-// const URL = 'https://thought-shower.herokuapp.com'
+import React from "react"
+import TitleView from "./TitleView"
 
 function IdeaList(props) {
-    let [showIdea, setShowIdea] = useState(false);
   if (props.data) {
-    console.log("idealist",props)
-    
-    const showIdeaModal = () => {
-      setShowIdea(true);
-    };
-    const hideIdeaModal = () => {
-      setShowIdea(false);
-    };
-    console.log("ideaview", props);
-
-     const ideas = props.data.data.map(arr => {
-      const color =
-        arr.likes >= 0 ? (arr.likes > 0 ? "green" : "black") : "red";
+    const ideas = props.data.data.map(arr => {
       return (
         <div>
-        <TitleView
-              id = {arr._id}
-              title = {arr.title}
-              category={arr.category}
-              likes={arr.likes}
-              color={color}
-              updateIdea={props.updateIdea}
-              deleteIdea={props.deleteIdea}
-              />
-            
-          
+          <TitleView
+            id={arr._id}
+            updateIdea={props.updateIdea}
+            deleteIdea={props.deleteIdea}
+            user={props.user}
+            data={arr}
+          />
         </div>
-      );
-    });
-
-    return <div>{ideas}</div>;
+      )
+    })
+    return <div>{ideas}</div>
   } else {
-    return <></>;
+    return <></>
   }
 }
-export default IdeaList;
+export default IdeaList

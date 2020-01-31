@@ -1,23 +1,21 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 import Alert from 'react-bootstrap/Alert'
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Button from 'react-bootstrap/Button'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
 function DeleteForm(props) {
-  let [title, setTitle] = useState(props.title);
-
   const showHideClassName = props.showDelete
     ? "modal display-block"
-    : "modal display-none";
+    : "modal display-none"
 
   const handleSubmit = e => {
-    e.preventDefault();
-  };
+    e.preventDefault()
+  }
 
   const handleDelete = e => {
     e.preventDefault()
-    props.deleteIdea(props.id);
+    props.deleteIdea(props.id)
     props.hideDeleteModal()
   }
   return (
@@ -37,7 +35,7 @@ function DeleteForm(props) {
         </form>
       </Alert>
     </div>
-  );
+  )
 }
 
-export default DeleteForm;
+export default DeleteForm

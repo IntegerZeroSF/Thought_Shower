@@ -12,15 +12,17 @@ export default function FullCard(props) {
     let [red, setRed] = useState(false)
     const id = props.match ? props.match.params.id : '5e3440376c61050f2e964f20'
 
+    const dataURL = "https://thought-shower.herokuapp.com"
+
     useEffect(() => {
-        axios.get("http://localhost:4000/ideas/id/" + id)
+        axios.get(dataURL + "/ideas/id/" + id)
             .then(res => {
                 setData(res)
             })
     }, [])
 
     const card = data
-    const { user, category, title, post, comments, likes, favorites } = card ? card.data : 0
+    const { user, category, title, post, comments, likes, likedBy } = card ? card.data : 0
     const newTitle = []
 
     if (title) {
@@ -39,9 +41,10 @@ export default function FullCard(props) {
 
     const submitComment = e => {
         e.preventDefault()
-        axios.post("http://localhost:4000/ideas/comments/" + id,
+        const name = props.user ? props.user.name : 'anonymous'
+        axios.post(dataURL + "/ideas/comments/" + id,
             {
-                user,
+                user: name,
                 message: newComment
             }).then(res => {
                 setData(res)
@@ -49,8 +52,35 @@ export default function FullCard(props) {
             })
     }
 
-    const handleLike = e => {
+    const handleLike = () => {
+        if (props.user) {
+            axios.post(dataURL + "/ideas/likes/" + id + "/true", props.user)
+                .then(res => setData(res))
+                .catch(err => console.log(err))
+        } else {
+            alert('You must login to like something!')
+        }
+    }
 
+    const handleDislike = () => {
+        if (props.user) {
+            axios.post(dataURL + "/ideas/likes/" + id + "/false", props.user)
+                .then(res => setData(res))
+                .catch(err => console.log(err))
+        } else {
+            alert('You must login to like something!')
+        }
+    }
+
+    const filter = card && props.user ? card.data.likedBy.filter(arr => arr.id === props.user._id) : false
+    if (filter.length) {
+        if (filter[0].liked && !green) {
+            setGreen(true)
+            setRed(false)
+        } else if (!filter[0].liked && !red) {
+            setRed(true)
+            setGreen(false)
+        }
     }
 
     const color = likes
@@ -65,7 +95,7 @@ export default function FullCard(props) {
                     <Card.Body>{com.message}</Card.Body>
                 </Card>
             )
-        })
+            })
         : ''
 
     return (
@@ -74,15 +104,15 @@ export default function FullCard(props) {
                 {/* <h1>{user}</h1> */}
                 <Card.Header as="h1">{newTitle}</Card.Header>
                 <Card.Title as="h2" className='fullViewCard'>{user}</Card.Title>
-                <Card.Title as="h3" className='fullViewCard'>{category}</Card.Title>
+                <Card.Title as="h3" className='fullViewCard'>Category: {category}</Card.Title>
                 <p className='fullViewDescrip'>{post}</p>
 
                 <Card.Footer className='button-container-full-view'>
                     <span className={'like-count ' + color}>{likes}</span>
-                    <button className='like-button upvote'>
+                    <button className={green ? 'like-button upvote-selected' : 'like-button upvote'} onClick={handleLike}>
                         <img src='/thumbs_up.png' className='like' />
                     </button>
-                    <button className='like-button downvote'>
+                    <button className={red ? 'like-button downvote-selected' : 'like-button downvote'} onClick={handleDislike}>
                         <img src='/thumbs_down.png' className='like' />
                     </button>
                 </Card.Footer>

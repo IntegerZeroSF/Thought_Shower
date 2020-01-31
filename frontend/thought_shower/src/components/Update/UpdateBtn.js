@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import "../Header/Header.css";
-import UpdateForm from "./UpdateForm";
+import React, { useState } from "react"
+import "../Header/Header.css"
+import UpdateForm from "./UpdateForm"
 
- import Button from 'react-bootstrap/Button';
+ import Button from 'react-bootstrap/Button'
 
 function UpdateBtn(props) {
-  let [showUpdate, setShowUpdate] = useState(false);
+  let [showUpdate, setShowUpdate] = useState(false)
 
   const showUpdateModal = () => {
-    setShowUpdate(true);
-  };
+    setShowUpdate(true)
+  }
   const hideUpdateModal = () => {
-    setShowUpdate(false);
-  };
+    setShowUpdate(false)
+  }
 
   return (
      <div>
@@ -35,7 +35,7 @@ function UpdateBtn(props) {
               Update Idea
             </Button>
           </div>
-  );
+  )
 }
 
-export default UpdateBtn;
+export default UpdateBtn

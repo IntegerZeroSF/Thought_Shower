@@ -49,9 +49,6 @@ A user would come to the site.  He or she will be presented with the list of ide
 The user will come to the site.  He or she will be presented with a list of ideas and be able to search or filter by categories.  He or she will be able to create an account so the site can be more interactive.  Have a way to favorite idea, share and possbile generate an email to the creator of the idea.
 
 ## Components
-##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
-
-## Components and Descriptions 
 
 - Header -- Provide the user with links to create, browse, about us and back to home throughout the application. 
 - Home -- The landing page for the application.  Presents the user with a browse the existing ideas or create a new one.

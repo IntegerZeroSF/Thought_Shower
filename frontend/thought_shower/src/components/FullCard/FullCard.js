@@ -128,6 +128,7 @@ export default function FullCard(props) {
                         placeholder="Write a comment"
                         value={newComment}
                         onChange={updateComment}
+                        required="required"
                     />
                     <br />
                     <Button type="Sumbit">Submit</Button>

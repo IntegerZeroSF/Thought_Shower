@@ -101,7 +101,7 @@ function App() {
   if (!isLoggedIn && user) setUser()
 
   return (
-    <div>
+    <div className="App">
       <Helmet><title>Thought Shower</title></Helmet>
       <header className="header">
         <div>

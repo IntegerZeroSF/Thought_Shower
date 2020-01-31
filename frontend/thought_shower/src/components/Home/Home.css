@@ -2,7 +2,9 @@
 .homeBody {
     background: linear-gradient(rgba(41, 100, 148, 0.5), rgba(66, 165, 245, 0.3), transparent), url("homeBGTest.jpg");
     background-size: 100% 100%;
-    padding: 10vh;
+    padding: 100px;
+    padding-bottom: 20vh;
+    
 }
 
 .intro {

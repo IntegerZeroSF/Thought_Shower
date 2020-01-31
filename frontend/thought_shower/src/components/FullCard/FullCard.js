@@ -41,7 +41,7 @@ export default function FullCard(props) {
         e.preventDefault()
         axios.post("http://localhost:4000/ideas/comments/" + id,
             {
-                user,
+                user: props.user.name,
                 message: newComment
             }).then(res => {
                 setData(res)
@@ -51,15 +51,32 @@ export default function FullCard(props) {
 
     const handleLike = e => {
         if (props.user) {
-            setGreen(true)
-            if (red) setRed(false)
+            axios.post("http://localhost:4000/ideas/likes/" + id + "/true", props.user)
+                .then(res => setData(res))
+                .catch(err => console.log(err))
+        } else {
+            alert('You must login to like something!')
         }
     }
 
     const handleDislike = e => {
         if (props.user) {
+            axios.post("http://localhost:4000/ideas/likes/" + id + "/false", props.user)
+                .then(res => setData(res))
+                .catch(err => console.log(err))
+        } else {
+            alert('You must login to like something!')
+        }
+    }
+
+    const filter = card && props.user ? card.data.likedBy.filter(arr => arr.id === props.user._id) : false
+    if (filter.length) {
+        if (filter[0].liked && !green) {
+            setGreen(true)
+            setRed(false)
+        } else if (!filter[0].liked && !red) {
             setRed(true)
-            if (green) setGreen(false)
+            setGreen(false)
         }
     }
 

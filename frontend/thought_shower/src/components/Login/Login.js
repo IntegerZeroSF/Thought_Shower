@@ -39,6 +39,7 @@ export default function Login(props) {
                     type="text"
                     name="password"
                     placeholder="Password"
+                    autoComplete="off"
                     value={password}
                     onChange={handlePassChange}
                 />

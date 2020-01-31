@@ -10,16 +10,16 @@ import Navbar from 'react-bootstrap/Navbar'
 
 function Header(props) {
   const logBtn = props.user
-    ? <Link to="/"><Button onClick={props.handleLogout}>Log Out</Button></Link>
-    : <Link to="/login"><Button>Log In</Button>></Link>
+    ? <Nav.Link><Link to="/" onClick={props.handleLogout} className="loginNav">Log Out</Link></Nav.Link>
+    : <Nav.Link><Link to="/login" className="loginNav">Log In</Link></Nav.Link>
 
   const name = props.user
     ? props.user.name.split(' ').shift()
     : ''
 
   const greeting = props.user
-    ? <Navbar.Text href="/">Welcome back, {name}</Navbar.Text>
-    : <Link to="/signup"><Button>Sign Up</Button>></Link>
+    ? <Navbar.Text href="/" className="loginNav">Welcome back, {name}</Navbar.Text>
+    : <Nav.Link><Link to="/signup" className="loginNav">Sign Up</Link></Nav.Link>
 
   return (
     <div className='headerBody'>

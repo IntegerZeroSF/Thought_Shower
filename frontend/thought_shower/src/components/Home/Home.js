@@ -12,10 +12,12 @@ function Home(props) {
   return (
     <div className='homeBody'>
       <Jumbotron fluid className='intro'>
-          <h1 className='jumboTitle'>Fluid jumbotron</h1>
+          <h1 className='jumboTitle'>Thought Shower</h1>
           <p className='jumboPara'>
-            This is a modified jumbotron that occupies the entire horizontal
-            space of its parent.
+            Welcome to Thought Shower, where developers may help others find inspiration or find
+            inspiration themselves!
+            <br/>
+            Down below you can get started by simpley creating your own idea, or browsing others.
           </p>
       </Jumbotron>
       <Card className='cardDiv'>

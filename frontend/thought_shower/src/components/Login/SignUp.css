@@ -1,0 +1,23 @@
+.signUpDiv {
+    margin: 3vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+}
+
+.signUpDiv:hover {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+}
+
+.signUpForm {
+    margin-top: 2vh;
+    margin-left: 1vh;
+}
+
+.signUpButton {
+    margin-top: 2vh;
+    margin-left: 1vh;
+    margin-bottom: 2vh;
+}

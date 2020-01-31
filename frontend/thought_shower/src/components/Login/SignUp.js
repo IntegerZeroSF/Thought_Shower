@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import './SignUp.css'
+
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 export default function SignUp(props) {
     let [name, setName] = useState('')
@@ -43,9 +47,10 @@ export default function SignUp(props) {
     if (props.user) props.history.push('/')
 
     return (
-        <div>
-            <h1>Sign up</h1>
-            <form onSubmit={handleSubmit}>
+        <div className="signUpDiv">
+            <Card>
+            <Card.Header as="h1">Sign up</Card.Header>
+            <form onSubmit={handleSubmit} className="signUpForm">
                 <input 
                     type="text"
                     name="name"
@@ -86,8 +91,9 @@ export default function SignUp(props) {
                     onChange={handleConfirmChange}
                 />
                 <br/>
-                <input type="Submit"/>
+                <Button type="Submit" className="signUpButton">Submit</Button>
             </form>
+            </Card>
         </div>
     )
 }

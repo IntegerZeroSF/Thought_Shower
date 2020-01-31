@@ -36,7 +36,14 @@
     text-decoration: none;
 }
 
+.loginNav {
+    color: white;
+    text-decoration: none;
+}
 
+.loginNav:hover {
+    text-decoration: none;
+}
 
 .dropdownContent {
     display: none;

@@ -35,10 +35,3 @@
 .display-none {
   display: none;
 }
-
-
-        /*{ <div className="thoughts"> }
-        <Link to={"/thoughts/"}>
-        <button className="homeButtons">Browse</button>
-      </Link>
-    { </div> }*/

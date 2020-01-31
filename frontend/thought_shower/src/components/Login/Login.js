@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import './Login.css'
+
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 export default function Login(props) {
     let [email, setEmail] = useState('')
@@ -27,8 +31,9 @@ export default function Login(props) {
 
     return (
         <div>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
+            <Card className="loginDiv">
+            <Card.Header as="h1">Login</Card.Header>
+            <form onSubmit={handleSubmit} className="loginForm">
                 <input 
                     type="text"
                     name="email"
@@ -49,8 +54,9 @@ export default function Login(props) {
                     onChange={handlePassChange}
                 />
                 <br/>
-                <input type="Submit"/>
+                <Button type="Submit" className="loginButton">Login</Button>
             </form>
+            </Card>
         </div>
     )
 }

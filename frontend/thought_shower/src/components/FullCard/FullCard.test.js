@@ -8,7 +8,7 @@ Enzyme.configure({adapter: new Adapter() });
 
 describe ('FullCard', () => {
   it('should show text', () => {
-   const component = shallow(<FullCard id={100}/>);
-    expect(component.contains('Write a comment')).toBe(true)
+   const component = shallow(<FullCard />);
+    expect(component.contains('Submit')).toBe(true)
   })
 })

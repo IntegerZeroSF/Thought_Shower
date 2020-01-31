@@ -10,7 +10,7 @@ export default function FullCard(props) {
     let [newComment, setNewComment] = useState('')
     let [green, setGreen] = useState(false)
     let [red, setRed] = useState(false)
-    const id = props.match.params.id
+    const id = props.match ? props.match.params.id : '5e3440376c61050f2e964f20'
 
     useEffect(() => {
         axios.get("http://localhost:4000/ideas/id/" + id)

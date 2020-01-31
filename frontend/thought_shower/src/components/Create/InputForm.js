@@ -52,6 +52,7 @@ function InputForm(props) {
                 value={title}
                 type="text"
                 placeholder="Idea Name"
+                required="required"
                 onChange={handleChangeTitle}
               ></input>
             </div>
@@ -61,6 +62,7 @@ function InputForm(props) {
                 value={category}
                 type="text"
                 placeholder="Category"
+                required="required"
                 onChange={handleChangeCategory}
               ></input>
             </div>
@@ -70,6 +72,7 @@ function InputForm(props) {
                 value={post}
                 type="text"
                 placeholder="Description"
+                required="required"
                 onChange={handleChangePost}
               ></textarea>
             </div>

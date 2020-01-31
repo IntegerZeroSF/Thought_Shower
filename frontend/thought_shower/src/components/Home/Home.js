@@ -32,7 +32,7 @@ function Home(props) {
       <br/>
       <br/>
       <Card className='cardDiv'>
-        <Card.Header className='0homeCardTitle'>Browse your own Idea</Card.Header>
+        <Card.Header className='homeCardTitle'>Browse your own Idea</Card.Header>
         <Card.Body>
           <Card.Text className='homeCardBody'>
             Here you can browser for all kinds of ideas or inspiration. 

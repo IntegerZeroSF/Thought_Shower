@@ -24,7 +24,7 @@ export default function Login(props) {
     }
 
     if (props.user) props.history.push('/')
-    
+
     return (
         <div>
             <h1>Login</h1>
@@ -34,6 +34,7 @@ export default function Login(props) {
                     name="email"
                     placeholder="Email"
                     value={email}
+                    required="required"
                     onChange={handleEmailChange}
                 />
                 <br/>
@@ -43,6 +44,7 @@ export default function Login(props) {
                     placeholder="Password"
                     autoComplete="off"
                     value={password}
+                    required="required"
                     onChange={handlePassChange}
                 />
                 <br/>

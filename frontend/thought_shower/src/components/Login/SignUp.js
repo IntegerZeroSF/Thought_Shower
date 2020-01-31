@@ -51,6 +51,7 @@ export default function SignUp(props) {
                     name="name"
                     placeholder="Name"
                     value={name}
+                    required="required"
                     onChange={handleNameChange}
                 />
                 <br/>
@@ -59,6 +60,7 @@ export default function SignUp(props) {
                     name="email"
                     placeholder="Email"
                     value={email}
+                    required="required"
                     onChange={handleEmailChange}
                 />
                 <br/>
@@ -68,6 +70,7 @@ export default function SignUp(props) {
                     placeholder="Password"
                     autoComplete="off"
                     value={password}
+                    required="required"
                     onChange={handlePassChange}
                 />
                 <br/>
@@ -77,6 +80,7 @@ export default function SignUp(props) {
                     placeholder="Confirm Password"
                     autoComplete="off"
                     value={confirm}
+                    required="required"
                     onChange={handleConfirmChange}
                 />
                 <br/>

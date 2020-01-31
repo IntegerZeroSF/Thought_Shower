@@ -5,8 +5,6 @@ import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
 function DeleteForm(props) {
-  let [title, setTitle] = useState(props.title)
-
   const showHideClassName = props.showDelete
     ? "modal display-block"
     : "modal display-none"

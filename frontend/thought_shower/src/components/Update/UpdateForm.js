@@ -52,7 +52,8 @@ function UpdateForm(props) {
               value={title}
               type="text"
               placeholder="Idea Name"
-              onChange={e => handleChangeTitle(e)}
+              required="required"
+              onChange={handleChangeTitle}
             ></input>
           </div>
           <div>
@@ -61,7 +62,8 @@ function UpdateForm(props) {
               value={category}
               type="text"
               placeholder="Category"
-              onChange={e => handleChangeCategory(e)}
+              required="required"
+              onChange={handleChangeCategory}
             ></input>
           </div>
           <div>
@@ -70,7 +72,8 @@ function UpdateForm(props) {
               value={post}
               type="text"
               placeholder="Description"
-              onChange={e => handleChangePost(e)}
+              required="required"
+              onChange={handleChangePost}
             ></textarea>
           </div>
 

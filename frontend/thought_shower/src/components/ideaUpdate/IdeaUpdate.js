@@ -1,56 +1,54 @@
-import React, { useState }from 'react';
-import DeleteBtn from '../Delete/DeleteBtn';
-import ''./IdeaUpdate.css';
+import React, { useState }from 'react'
+import DeleteBtn from '../Delete/DeleteBtn'
 
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card'
 
 function IdeaUpdate(props){
 
-  let [title, setTitle] = useState();
-    let [category, setCategory] = useState();
-    let [post, setPost] = useState();
+  let [title, setTitle] = useState()
+    let [category, setCategory] = useState()
+    let [post, setPost] = useState()
 
     
   
     const showHideClassName = props.showInput
       ? "modal display-block"
-      : "modal display-none";
+      : "modal display-none"
   
  
     const handleChangeCategory = e => {
-      e.preventDefault();
-      setCategory(e.target.value);
-    };
+      e.preventDefault()
+      setCategory(e.target.value)
+    }
     const handleChangePost = e => {
-      e.preventDefault();
-      setPost(e.target.value);
-    };
+      e.preventDefault()
+      setPost(e.target.value)
+    }
   
     const handleSubmit = e => {
-      e.preventDefault();
+      e.preventDefault()
   
       const Idea = {
         title: title,
         category: category,
         post: post
-      };
+      }
   
-      props.updateIdea(Idea);
-    };
+      props.updateIdea(Idea)
+    }
 
     return (
       <div className={showHideClassName}>
         <Card className='modal-main'>
           <Card.Title className='modalhead'>hi</Card.Title>
-          <form className='form' onSubmit={e => handleSubmit(e)}>
+          <form className='form' onSubmit={handleSubmit}>
             <div>
               <input
                 className='input'
                 value={category}
                 type="text"
                 placeholder="Category"
-                onChange={e => handleChangeCategory(e)}
+                onChange={handleChangeCategory}
               ></input>
             </div>
             <div>
@@ -59,7 +57,7 @@ function IdeaUpdate(props){
                 value={post}
                 type="text"
                 placeholder="Description"
-                onChange={e => handleChangePost(e)}
+                onChange={handleChangePost}
          
               ></textarea>
             </div>

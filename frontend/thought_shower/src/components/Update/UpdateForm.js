@@ -75,7 +75,7 @@ function UpdateForm(props) {
           </div>
 
           <div>
-            <Button  className="sumbitbtn">Submit</Button >
+            <Button type="Submit" className="sumbitbtn">Submit</Button >
           </div>
         </form>
         </Card.Body>

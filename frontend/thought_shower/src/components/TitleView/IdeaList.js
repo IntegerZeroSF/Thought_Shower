@@ -9,16 +9,12 @@ import TitleView from "./TitleView"
 
 function IdeaList(props) {
   if (props.data) {
+    console.log('idealist', props.data.data)
     const ideas = props.data.data.map(arr => {
       return (
         <div>
           <TitleView
             id={arr._id}
-            // uid={arr.uid}
-            // title={arr.title}
-            // category={arr.category}
-            // likes={arr.likes}
-            // likedBy={arr.likedBy}
             updateIdea={props.updateIdea}
             deleteIdea={props.deleteIdea}
             user={props.user}

@@ -64,19 +64,21 @@ function App() {
   const handleLogout = () => {
     localStorage.clear()
     setLogin(false)
+    setUser()
   }
 
-  const createIdea = Idea => {
-    console.log(Idea)
-    axios.post(dataUrl, Idea)
+  const createIdea = idea => {
+    console.log(idea)
+    setData()
+    axios.post(dataUrl, idea)
       .then(ideas => {
-        let newData = ideas
-        setData(newData)
+        setData(ideas)
       })
       .catch(err => console.log(err))
   };
 
   const deleteIdea = id => {
+    setData()
     axios.delete(dataUrl + '/id/' + id)
       .then(ideas => {
         setData(ideas)
@@ -85,14 +87,16 @@ function App() {
   };
 
   const updateIdea = (id, idea) => {
+    setData()
     axios.put(dataUrl + '/id/' + id, idea)
       .then(ideas => {
         setData(ideas)
       })
       .catch(err => console.log(err))
   };
-  console.log(isLoggedIn)
-  console.log(user)
+
+  if (!isLoggedIn && user) setUser()
+
   return (
     <div>
       <Helmet><title>Thought Shower</title></Helmet>

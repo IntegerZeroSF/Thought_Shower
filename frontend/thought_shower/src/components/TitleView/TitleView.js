@@ -27,7 +27,6 @@ function TitleView(props) {
     }
     newTitle.join('')
   }
-  newTitle.join('')
 
   const handleLike = () => {
     if (props.user) {
@@ -64,6 +63,24 @@ function TitleView(props) {
     ? (likes >= 0 ? "green" : "red")
     : 'black'
 
+  let remove = '', update = ''
+  if (props.user) {
+    if (uid === props.user._id) {
+      update = <UpdateBtn 
+                  id={props.id} 
+                  title={title}
+                  category={category}
+                  post={post}
+                  updateIdea={props.updateIdea} 
+                />
+      remove = <DeleteBtn 
+                  id={props.id}
+                title={title}
+                deleteIdea={props.deleteIdea} 
+              />
+    }
+  }
+
   return (
     <Card className='container' style={{ padding: '0' }}>
       <Card.Header as='h1'>{newTitle}</Card.Header>
@@ -71,15 +88,8 @@ function TitleView(props) {
       <Card.Body>
         <Card.Title as='h2'>{category}</Card.Title>
         <ButtonGroup className='flexit btn-group'>
-          <UpdateBtn id={props.id}
-            title={newTitle}
-            category={category}
-            post={post}
-            updateIdea={props.updateIdea} />
-          <DeleteBtn id={props.id}
-            title={title}
-            deleteIdea={props.deleteIdea} />
-
+          {update}
+          {remove}
         </ButtonGroup>
       </Card.Body>
 

@@ -19,6 +19,7 @@ function TitleView(props) {
   let [red, setRed] = useState(false)
 
   const { uid, title, post, category, likes, likedBy } = data
+  const dataURL = "https://thought-shower.herokuapp.com"
 
   const newTitle = []
   if (title) {
@@ -30,7 +31,7 @@ function TitleView(props) {
 
   const handleLike = () => {
     if (props.user) {
-      axios.post("http://localhost:4000/ideas/likes/" + props.id + "/true", props.user)
+      axios.post(dataURL + "/ideas/likes/" + props.id + "/true", props.user)
         .then(res => setData(res.data))
         .catch(err => console.log(err))
     } else {
@@ -40,7 +41,7 @@ function TitleView(props) {
 
   const handleDislike = () => {
     if (props.user) {
-      axios.post("http://localhost:4000/ideas/likes/" + props.id + "/false", props.user)
+      axios.post(dataURL + "/ideas/likes/" + props.id + "/false", props.user)
         .then(res => setData(res.data))
         .catch(err => console.log(err))
     } else {

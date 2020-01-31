@@ -18,11 +18,11 @@ function App() {
   let [isLoggedIn, setLogin] = useState(false)
   let [user, setUser] = useState()
 
-  let dataUrl = "http://localhost:4000/ideas"
+  const dataURL = "https://thought-shower.herokuapp.com"
 
   useEffect(() => {
     if (localStorage.token) {
-      axios.get('http://localhost:4000/auth/user', {
+      axios.get(dataURL + '/auth/user', {
         headers: {
           "x-auth-token": localStorage.token
         }
@@ -32,7 +32,7 @@ function App() {
       })
     }
 
-    axios.get(dataUrl)
+    axios.get(dataURL + '/ideas')
       .then(ideas => {
         setData(ideas)
       })
@@ -40,7 +40,7 @@ function App() {
   }, [])
 
   const handleLogin = user => {
-    axios.post('http://localhost:4000/auth', user)
+    axios.post(dataURL + '/auth', user)
       .then(res => {
         localStorage.token = res.data.token
         setLogin(true)
@@ -57,7 +57,7 @@ function App() {
       return word
     })
     user.name = name.join(' ')
-    axios.post('http://localhost:4000/users', user)
+    axios.post(dataURL + '/users', user)
       .then(res => {
         localStorage.token = res.data.token
         setLogin(true)
@@ -73,7 +73,7 @@ function App() {
 
   const createIdea = idea => {
     setData()
-    axios.post(dataUrl, idea)
+    axios.post(dataURL + '/ideas', idea)
       .then(ideas => {
         setData(ideas)
       })
@@ -82,7 +82,7 @@ function App() {
 
   const deleteIdea = id => {
     setData()
-    axios.delete(dataUrl + '/id/' + id)
+    axios.delete(dataURL + '/ideas/id/' + id)
       .then(ideas => {
         setData(ideas)
       })
@@ -91,7 +91,7 @@ function App() {
 
   const updateIdea = (id, idea) => {
     setData()
-    axios.put(dataUrl + '/id/' + id, idea)
+    axios.put(dataURL + '/ideas/id/' + id, idea)
       .then(ideas => {
         setData(ideas)
       })

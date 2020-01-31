@@ -10,10 +10,12 @@ export default function FullCard(props) {
     let [newComment, setNewComment] = useState('')
     let [green, setGreen] = useState(false)
     let [red, setRed] = useState(false)
+
     const id = props.match.params.id
+    const dataURL = "https://thought-shower.herokuapp.com"
 
     useEffect(() => {
-        axios.get("http://localhost:4000/ideas/id/" + id)
+        axios.get(dataURL + "/ideas/id/" + id)
             .then(res => {
                 setData(res)
             })
@@ -40,7 +42,7 @@ export default function FullCard(props) {
     const submitComment = e => {
         e.preventDefault()
         const name = props.user ? props.user.name : 'anonymous'
-        axios.post("http://localhost:4000/ideas/comments/" + id,
+        axios.post(dataURL + "/ideas/comments/" + id,
             {
                 user: name,
                 message: newComment
@@ -52,7 +54,7 @@ export default function FullCard(props) {
 
     const handleLike = () => {
         if (props.user) {
-            axios.post("http://localhost:4000/ideas/likes/" + id + "/true", props.user)
+            axios.post(dataURL + "/ideas/likes/" + id + "/true", props.user)
                 .then(res => setData(res))
                 .catch(err => console.log(err))
         } else {
@@ -62,7 +64,7 @@ export default function FullCard(props) {
 
     const handleDislike = () => {
         if (props.user) {
-            axios.post("http://localhost:4000/ideas/likes/" + id + "/false", props.user)
+            axios.post(dataURL + "/ideas/likes/" + id + "/false", props.user)
                 .then(res => setData(res))
                 .catch(err => console.log(err))
         } else {

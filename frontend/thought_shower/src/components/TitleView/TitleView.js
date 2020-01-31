@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import './TitleView.css';
-import UpdateBtn from '../Update/UpdateBtn';
-import DeleteBtn from '../Delete/DeleteBtn';
+import React, { useState } from 'react'
+import './TitleView.css'
+import UpdateBtn from '../Update/UpdateBtn'
+import DeleteBtn from '../Delete/DeleteBtn'
 import axios from 'axios'
 
-import Card from 'react-bootstrap/Card';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import Button from 'react-bootstrap/Button'
 
 //VARIABLE DEFINITIONS:
 //  props.id        =>  The _id of the idea object
@@ -106,7 +106,7 @@ function TitleView(props) {
         </div>
       </Card.Footer>
     </Card>
-  );
+  )
 }
 
-export default TitleView;
+export default TitleView

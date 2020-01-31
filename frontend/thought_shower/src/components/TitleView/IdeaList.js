@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-// import "./TitleView.css";
+import React, { useState, useEffect } from "react"
+// import "./TitleView.css"
 import DeleteBtn from "../Delete/DeleteBtn"
 import UpdateBtn from "../Update/UpdateBtn"
 import TitleView from "./TitleView"
 
-// const axios = require('axios').default;
+// const axios = require('axios').default
 // const URL = 'https://thought-shower.herokuapp.com'
 
 function IdeaList(props) {
@@ -21,11 +21,11 @@ function IdeaList(props) {
             data={arr}
           />
         </div>
-      );
-    });
-    return <div>{ideas}</div>;
+      )
+    })
+    return <div>{ideas}</div>
   } else {
-    return <></>;
+    return <></>
   }
 }
-export default IdeaList;
+export default IdeaList

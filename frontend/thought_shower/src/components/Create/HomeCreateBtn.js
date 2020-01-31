@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import "../Header/Header.css";
-import InputForm from "../Create/InputForm";
+import React, { useState } from "react"
+import "../Header/Header.css"
+import InputForm from "../Create/InputForm"
 
 function HomeCreateBtn(props) {
-    let [showInput, setShowInput] = useState(false);
+    let [showInput, setShowInput] = useState(false)
 
     const showInputModal = () => {
-        console.log('here')
-        setShowInput(true);
-    };
+        setShowInput(true)
+    }
     const hideInputModal = () => {
-        setShowInput(false);
-    };
+        setShowInput(false)
+    }
 
     return (
         <>
@@ -27,7 +26,7 @@ function HomeCreateBtn(props) {
                 <p>Modal</p>
             </InputForm>
         </>
-    );
+    )
 }
 
-export default HomeCreateBtn;
+export default HomeCreateBtn

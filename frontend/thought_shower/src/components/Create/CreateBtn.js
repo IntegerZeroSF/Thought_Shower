@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import '../Header/Header.css';
-import InputForm from '../Create/InputForm';
+import React, { useState } from 'react'
+import '../Header/Header.css'
+import InputForm from '../Create/InputForm'
 
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav'
 
 function CreateBtn(props) {
-  let [showInput, setShowInput] = useState(false);
+  let [showInput, setShowInput] = useState(false)
   const showInputModal = () => {
-    setShowInput(true);
-  };
+    setShowInput(true)
+  }
   const hideInputModal = () => {
-    setShowInput(false);
-  };
+    setShowInput(false)
+  }
 
   return (
       <>
@@ -28,7 +27,7 @@ function CreateBtn(props) {
           Create
         </Nav.Link>
       </>
-  );
+  )
 }
 
-export default CreateBtn;
+export default CreateBtn

@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import '../Header/Header.css';
-import DeleteForm from './DeleteForm';
+import React, { useState } from 'react'
+import '../Header/Header.css'
+import DeleteForm from './DeleteForm'
 
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'
 
 
 function DeleteBtn(props) {
-  let [showDelete, setShowDelete] = useState(false);
+  let [showDelete, setShowDelete] = useState(false)
 
   const showDeleteModal = () => {
-    setShowDelete(true);
-  };
+    setShowDelete(true)
+  }
   const hideDeleteModal = () => {
-    setShowDelete(false);
-  };
+    setShowDelete(false)
+  }
 
   return (
     <div>
@@ -34,7 +34,7 @@ function DeleteBtn(props) {
               Delete Idea
             </Button>
           </div>
-  );
+  )
 }
 
-export default DeleteBtn;
+export default DeleteBtn

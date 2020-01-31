@@ -1,33 +1,33 @@
-import React, { useState } from "react";
-import './InputForm.css';
+import React, { useState } from "react"
+import './InputForm.css'
 
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 function InputForm(props) {
-  let [title, setTitle] = useState();
-  let [category, setCategory] = useState();
-  let [post, setPost] = useState();
+  let [title, setTitle] = useState()
+  let [category, setCategory] = useState()
+  let [post, setPost] = useState()
 
   const showHideClassName = props.showInput
     ? "modal display-block"
-    : "modal display-none";
+    : "modal display-none"
 
   const handleChangeTitle = e => {
-    e.preventDefault();
-    setTitle(e.target.value);
-  };
+    e.preventDefault()
+    setTitle(e.target.value)
+  }
   const handleChangeCategory = e => {
-    e.preventDefault();
-    setCategory(e.target.value);
-  };
+    e.preventDefault()
+    setCategory(e.target.value)
+  }
   const handleChangePost = e => {
-    e.preventDefault();
-    setPost(e.target.value);
-  };
+    e.preventDefault()
+    setPost(e.target.value)
+  }
 
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
 
     const Idea = {
       user: props.user ? props.user.name : 'anonymous',
@@ -35,11 +35,11 @@ function InputForm(props) {
       title: title,
       category: category,
       post: post
-    };
+    }
     props.createIdea(Idea)
     props.hideInputModal()
 
-  };
+  }
   return (
     <div className={showHideClassName}>
       <Card className='modal-main'>
@@ -84,7 +84,7 @@ function InputForm(props) {
         </Button>
       </Card>
     </div>
-  );
+  )
 }
 
-export default InputForm;
+export default InputForm

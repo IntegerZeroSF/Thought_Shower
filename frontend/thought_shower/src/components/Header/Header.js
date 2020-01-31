@@ -1,15 +1,26 @@
-import React from 'react';
-import CreateBtn from '../Create/CreateBtn';
-import { Link } from 'react-router-dom';
-import './Header.css';
+import React from 'react'
+import CreateBtn from '../Create/CreateBtn'
+import { Link } from 'react-router-dom'
+import './Header.css'
 
-import Nav from 'react-bootstrap/Nav';
-import Button from 'react-bootstrap/Button';
-import Navbar from 'react-bootstrap/Navbar';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
+import Nav from 'react-bootstrap/Nav'
+import Button from 'react-bootstrap/Button'
+import Navbar from 'react-bootstrap/Navbar'
+
 
 function Header(props) {
+  const logBtn = props.user
+    ? <Link to="/"><Button onClick={props.handleLogout}>Log Out</Button></Link>
+    : <Link to="/login"><Button>Log In</Button>></Link>
+
+  const name = props.user
+    ? props.user.name.split(' ').shift()
+    : ''
+
+  const greeting = props.user
+    ? <Navbar.Text href="/">Welcome back, {name}</Navbar.Text>
+    : <Link to="/signup"><Button>Sign Up</Button>></Link>
+
   return (
     <div className='headerBody'>
       <Navbar bg='primary' variant='dark'>
@@ -22,14 +33,11 @@ function Header(props) {
           <Nav.Link href="/ideas">Browse</Nav.Link>
           <Nav.Link href="/aboutus">About Us</Nav.Link>
         </Nav>
-        <button onClick={props.handleLogout}>Log Out</button>
-        <Form inline>
-          <FormControl type='text' placeholder='Search' className='mr-sm-2' />
-          <Button variant='outline-light'>Search</Button>
-        </Form>
+        {greeting}
+        {logBtn}
       </Navbar>
     </div>
-  );
+  )
 }
 
-export default Header;
+export default Header

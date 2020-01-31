@@ -23,6 +23,8 @@ export default function Login(props) {
         props.handleLogin(user)
     }
 
+    if (props.user) props.history.push('/')
+    
     return (
         <div>
             <h1>Login</h1>

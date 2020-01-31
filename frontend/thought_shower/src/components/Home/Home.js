@@ -1,12 +1,12 @@
-import React from "react";
-import "./Home.css";
+import React from "react"
+import "./Home.css"
 import HomeCreateBtn from "../Create/HomeCreateBtn"
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 
-import Button from 'react-bootstrap/Button';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button'
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Card from 'react-bootstrap/Card'
 
 function Home(props) {
   return (
@@ -45,7 +45,7 @@ function Home(props) {
         </Card.Body>
       </Card>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

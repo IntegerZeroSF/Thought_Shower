@@ -40,6 +40,8 @@ export default function SignUp(props) {
         }
     }
 
+    if (props.user) props.history.push('/')
+
     return (
         <div>
             <h1>Sign up</h1>

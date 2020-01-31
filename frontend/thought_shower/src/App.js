@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-
-// import InputForm from "./components//Create/InputForm";
-// import DeleteForm from "./components//Delete/DeleteForm";
-// import UpdateForm from "./components/Update/UpdateForm";
-import { Route } from "react-router-dom";
-import Home from "./components/Home/Home.js";
-import Header from "./components/Header/Header.js";
-import IdeaList from "./components/TitleView/IdeaList.js";
+import React, { useState, useEffect } from "react"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./App.css"
+import { Route } from "react-router-dom"
+import Home from "./components/Home/Home.js"
+import Header from "./components/Header/Header.js"
+import IdeaList from "./components/TitleView/IdeaList.js"
 import AboutUs from "./components/About Us/About Us.js"
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet"
 import FullCard from './components/FullCard/FullCard'
 import Login from './components/Login/Login'
 import SignUp from './components/Login/SignUp'
@@ -22,18 +18,18 @@ function App() {
   let [isLoggedIn, setLogin] = useState(false)
   let [user, setUser] = useState()
 
-  let dataUrl = "http://localhost:4000/ideas";
+  let dataUrl = "http://localhost:4000/ideas"
 
   useEffect(() => {
     if (localStorage.token) {
       axios.get('http://localhost:4000/auth/user', {
-            headers: {
-                "x-auth-token": localStorage.token
-            }
-        }).then(res => {
-            setLogin(true)
-            setUser(res.data)
-        })
+        headers: {
+          "x-auth-token": localStorage.token
+        }
+      }).then(res => {
+        setLogin(true)
+        setUser(res.data)
+      })
     }
 
     axios.get(dataUrl)
@@ -41,7 +37,7 @@ function App() {
         setData(ideas)
       })
       .catch(err => console.log(err))
-  }, []);
+  }, [])
 
   const handleLogin = user => {
     axios.post('http://localhost:4000/auth', user)
@@ -53,6 +49,14 @@ function App() {
   }
 
   const handleSignUp = user => {
+    const name = user.name.split(' ').map(arr => {
+      let word = arr.charAt(0).toUpperCase()
+      for (let i = 1; i < arr.length; i++) {
+        word += arr.charAt(i).toLowerCase()
+      }
+      return word
+    })
+    user.name = name.join(' ')
     axios.post('http://localhost:4000/users', user)
       .then(res => {
         localStorage.token = res.data.token
@@ -68,14 +72,13 @@ function App() {
   }
 
   const createIdea = idea => {
-    console.log(idea)
     setData()
     axios.post(dataUrl, idea)
       .then(ideas => {
         setData(ideas)
       })
       .catch(err => console.log(err))
-  };
+  }
 
   const deleteIdea = id => {
     setData()
@@ -84,7 +87,7 @@ function App() {
         setData(ideas)
       })
       .catch(err => console.log(err))
-  };
+  }
 
   const updateIdea = (id, idea) => {
     setData()
@@ -93,7 +96,7 @@ function App() {
         setData(ideas)
       })
       .catch(err => console.log(err))
-  };
+  }
 
   if (!isLoggedIn && user) setUser()
 
@@ -112,7 +115,7 @@ function App() {
           render={() => <Home user={user} createIdea={createIdea} />}
         />
         <Route path="/ideas"
-          render={() => <IdeaList 
+          render={() => <IdeaList
             user={user}
             data={data}
             updateIdea={updateIdea}
@@ -123,12 +126,12 @@ function App() {
         <Route path="/fullview/:id"
           render={props => <FullCard user={user} {...props} />} />
         <Route path="/login"
-          render={() => <Login handleLogin={handleLogin} />} />
+          render={props => <Login {...props} user={user} handleLogin={handleLogin} />} />
         <Route path="/signup"
-          render={() => <SignUp handleSignUp={handleSignUp} />} />
+          render={props => <SignUp {...props} user={user} handleSignUp={handleSignUp} />} />
       </main>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

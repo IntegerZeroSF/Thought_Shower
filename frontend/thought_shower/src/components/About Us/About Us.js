@@ -1,8 +1,8 @@
-import React from "react";
-import './About Us.css';
+import React from "react"
+import './About Us.css'
 
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Button from 'react-bootstrap/Button';
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Button from 'react-bootstrap/Button'
 
 function AboutUs(props) {
     return (
@@ -12,12 +12,12 @@ function AboutUs(props) {
                 <p>
                    The three of us, Kyle Freyermuth, Mike Grothusen, and Raymond Levengood created 
                    the site you are currently using. We came up with this idea while ironocialy trying 
-                   come up with our own idea. The site premise is simple. You can browse, and create 
-                   ideas which you opr anyone else may use. It's a match box for you barin.
+                   come up with our own idea. The site premise is simple. You can browse and create 
+                   ideas which you or anyone else may use. It's a match box for you brain.
                 </p>
                 <br />
                 <p>
-                    The technoogies we used are varied and fully demostrate our knowledge of frontend and 
+                    The technoogies we used are varied and fully demonstrate our knowledge of frontend and 
                     backend. Technologies include React, React-Bootstrap, React-Helmet, Mongoose, Express,
                     HTML5, CSS3, and anything else we may have come up with!
                 </p>
@@ -39,4 +39,4 @@ function AboutUs(props) {
     )
 }
 
-export default AboutUs;
+export default AboutUs

@@ -101,7 +101,6 @@ export default function FullCard(props) {
     return (
         <div className='fullCardBody'>
             <Card className='fullCardCard'> 
-                {/* <h1>{user}</h1> */}
                 <Card.Header as="h1">{newTitle}</Card.Header>
                 <Card.Title as="h2" className='fullViewCard'>{user}</Card.Title>
                 <Card.Title as="h3" className='fullViewCard'>Category: {category}</Card.Title>

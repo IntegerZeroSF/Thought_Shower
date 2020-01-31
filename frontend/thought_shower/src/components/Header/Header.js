@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import './Header.css'
 
 import Nav from 'react-bootstrap/Nav'
-import Button from 'react-bootstrap/Button'
 import Navbar from 'react-bootstrap/Navbar'
 
 
@@ -22,19 +21,22 @@ function Header(props) {
     : <Nav.Link><Link to="/signup" className="loginNav">Sign Up</Link></Nav.Link>
 
   return (
-    <div className='headerBody'>
-      <Navbar bg='primary' variant='dark'>
+
+        <div className='headerBody'>
+      <Navbar bg='primary' variant='dark' >
         <Navbar.Brand href="/" className='navTitle'>
           Thought Shower
         </Navbar.Brand>
-        <Nav className='mr-auto'>
-          <Nav.Link href="/">Home</Nav.Link>
-          <CreateBtn user={props.user} createIdea={props.createIdea}/>
-          <Nav.Link href="/ideas">Browse</Nav.Link>
-          <Nav.Link href="/aboutus">About Us</Nav.Link>
-        </Nav>
-        {greeting}
-        {logBtn}
+        <Navbar.Collapse id="basic-nav-dropdown">
+          <Nav className='mr-auto'>
+            <Nav.Link><Link to="/" className="loginNav">Home</Link></Nav.Link>
+            <CreateBtn user={props.user} createIdea={props.createIdea}/>
+            <Nav.Link><Link to="/ideas" className="loginNav">Browse</Link></Nav.Link>
+            <Nav.Link><Link to="/aboutus" className="loginNav">About Us</Link></Nav.Link>
+          </Nav>
+          {greeting}
+          {logBtn}
+        </Navbar.Collapse>
       </Navbar>
     </div>
   )

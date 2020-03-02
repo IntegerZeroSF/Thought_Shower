@@ -14,25 +14,6 @@
     margin: 0px 30px;  
     padding-left: 20px;
     font-size: 2rem;
-    color: black;
-    text-decoration: none;
-}
-
-.navItem {
-    display: inline-block;
-    margin: 0px 30px;
-}
-
-.navItem, .navBTN {
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-}
-
-.dropdown {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
 }
 
@@ -44,30 +25,3 @@
 .loginNav:hover {
     text-decoration: none;
 }
-
-.dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    margin-top: 5px;
-}
-
-.dropdown:hover .dropdownContent {
-    display: block;
-}
-
-.dropdownLink {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdownLink:hover {
-    background: #42A5F5;
-    border-bottom: 2px solid #296596
-} 

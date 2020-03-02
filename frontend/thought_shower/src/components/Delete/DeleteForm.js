@@ -25,10 +25,10 @@ function DeleteForm(props) {
         <form className='inputform' onSubmit={e => handleSubmit(e)}>
         <br />
           <ButtonGroup>
-            <Button className='sumbitbtn' onClick={e => handleDelete(e)}>
+            <Button variant='danger' className='sumbitbtn' onClick={e => handleDelete(e)}>
               Yes
             </Button>
-            <Button variant='danger' onClick={props.hideDeleteModal} className='closebtn'>
+            <Button onClick={props.hideDeleteModal} className='closebtn' style={{marginLeft: "20px"}}>
               No
             </Button>
           </ButtonGroup>

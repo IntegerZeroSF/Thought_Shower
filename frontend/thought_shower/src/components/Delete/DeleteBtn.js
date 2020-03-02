@@ -30,6 +30,7 @@ function DeleteBtn(props) {
               className='createbtn'
               type='button'
               onClick={showDeleteModal}
+              variant="danger"
             >
               Delete Idea
             </Button>

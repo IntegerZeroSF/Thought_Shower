@@ -1,10 +1,9 @@
 
 .homeBody {
-    background: linear-gradient(rgba(41, 100, 148, 0.5), rgba(66, 165, 245, 0.3), transparent), url("homeBGTest.jpg");
-    background-size: 100% 100%;
-    padding: 100px;
-    padding-bottom: 20vh;
-    
+    /* background: linear-gradient(rgba(41, 100, 148, 0.5), rgba(66, 165, 245, 0.3), transparent), url("homeBGTest.jpg");
+    background-size: 100% 100%; */
+    /* background-color: rgb(221, 221, 221); */
+    padding: 5vh 5vw 10vh 5vw;
 }
 
 .intro {
@@ -52,4 +51,4 @@
 .homeCardBody {
   text-align: center;
   margin-bottom: 2vh;
-}
+} 

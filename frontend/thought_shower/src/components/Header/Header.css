@@ -1,4 +1,4 @@
-.nav {
+/* .nav {
 	position: sticky;
 	display: flex;
 	align-items: center;
@@ -8,20 +8,19 @@
     border-bottom: 3px solid #296596;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
     
-}
+} */
 
 .navTitle {
-    margin: 0px 30px;  
-    padding-left: 20px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-decoration: none;
 }
 
 .loginNav {
-    color: white;
+    color: white !important;
     text-decoration: none;
 }
 
 .loginNav:hover {
     text-decoration: none;
+    opacity: 60%;
 }

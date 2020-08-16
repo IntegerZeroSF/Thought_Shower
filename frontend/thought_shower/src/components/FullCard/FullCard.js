@@ -55,7 +55,9 @@ export default function FullCard(props) {
     const handleLike = () => {
         if (props.user) {
             axios.post(dataURL + "/ideas/likes/" + id + "/true", props.user)
-                .then(res => setData(res))
+                .then(res => {
+                    setData(res)
+                })
                 .catch(err => console.log(err))
         } else {
             alert('You must login to like something!')
@@ -65,14 +67,16 @@ export default function FullCard(props) {
     const handleDislike = () => {
         if (props.user) {
             axios.post(dataURL + "/ideas/likes/" + id + "/false", props.user)
-                .then(res => setData(res))
+                .then(res => {
+                    setData(res)
+                })
                 .catch(err => console.log(err))
         } else {
             alert('You must login to like something!')
         }
     }
 
-    const filter = card && props.user ? card.data.likedBy.filter(arr => arr.id === props.user._id) : false
+    const filter = (card && props.user) ? card.data.likedBy.filter(arr => arr.id === props.user._id) : false
     if (filter.length) {
         if (filter[0].liked && !green) {
             setGreen(true)
@@ -90,7 +94,7 @@ export default function FullCard(props) {
     const commentList = comments
         ? comments.map(com => {
             return (
-                <Card className='commentsDiv'>
+                <Card className='commentsDiv' key={com._id}>
                     <Card.Header as="h3">{com.user}</Card.Header>
                     <Card.Body>{com.message}</Card.Body>
                 </Card>
@@ -109,10 +113,10 @@ export default function FullCard(props) {
                 <Card.Footer className='button-container-full-view'>
                     <span className={'like-count ' + color}>{likes}</span>
                     <button className={green ? 'like-button upvote-selected' : 'like-button upvote'} onClick={handleLike}>
-                        <img src='/thumbs_up.png' className='like' />
+                        <img src='/thumbs_up.png' alt="thumbs up" className='like' />
                     </button>
                     <button className={red ? 'like-button downvote-selected' : 'like-button downvote'} onClick={handleDislike}>
-                        <img src='/thumbs_down.png' className='like' />
+                        <img src='/thumbs_down.png' alt="thumbs down" className='like' />
                     </button>
                 </Card.Footer>
             </Card>

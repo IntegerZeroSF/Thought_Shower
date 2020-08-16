@@ -101,10 +101,10 @@ function TitleView(props) {
         <div className='button-container'>
           <span className={'like-count ' + color}>{likes}</span>
           <button className={green ? 'like-button upvote-selected' : 'like-button upvote'} onClick={handleLike}>
-            <img src='/thumbs_up.png' className='like' />
+            <img src='/thumbs_up.png' alt="thumbs up" className='like' />
           </button>
           <button className={red ? 'like-button downvote-selected' : 'like-button downvote'} onClick={handleDislike}>
-            <img src='/thumbs_down.png' className='like' />
+            <img src='/thumbs_down.png' alt="thumbs down" className='like' />
           </button>
         </div>
       </Card.Footer>

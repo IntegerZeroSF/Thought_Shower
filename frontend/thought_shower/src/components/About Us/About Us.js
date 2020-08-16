@@ -11,8 +11,8 @@ function AboutUs(props) {
                 <h1 className='aboutUsTitle'>About Us!</h1>
                 <p>
                    The three of us, Kyle Freyermuth, Mike Grothusen, and Raymond Levengood created 
-                   the site you are currently using. We came up with this idea while ironocialy trying 
-                   come up with our own idea. The site premise is simple. You can browse and create 
+                   the site you are currently using. We came up with this idea while ironically trying 
+                   to come up with our own idea. The site premise is simple. You can browse and create 
                    ideas which you or anyone else may use. It's a match box for you brain.
                 </p>
                 <br />

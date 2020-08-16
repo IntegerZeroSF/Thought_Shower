@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "../Header/Header.css"
 import InputForm from "../Create/InputForm"
+import Button from 'react-bootstrap/Button'
 
 function HomeCreateBtn(props) {
     let [showInput, setShowInput] = useState(false)
@@ -14,9 +15,7 @@ function HomeCreateBtn(props) {
 
     return (
         <>
-            <div onClick={showInputModal}>
-                Create
-            </div>
+            <Button variant="primary" onClick={showInputModal} block>Create</Button>
             <InputForm
                 user={props.user}
                 showInput={showInput}

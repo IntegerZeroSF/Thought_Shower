@@ -5,7 +5,7 @@ function IdeaList(props) {
   if (props.data) {
     const ideas = props.data.data.map(arr => {
       return (
-        <div>
+        <div key={arr._id}>
           <TitleView
             id={arr._id}
             updateIdea={props.updateIdea}

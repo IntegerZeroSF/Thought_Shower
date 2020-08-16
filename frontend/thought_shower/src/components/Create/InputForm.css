@@ -7,23 +7,22 @@
 }
 
 .inputform {
-  width: 50%;
   margin: auto;
 }
 
-.input {
+.f-input {
   font-weight: bold;
-  width: 80%;
+  width: 90%;
   padding: 10px;
+  margin: 5px auto;
   text-align: top;
 }
 
 .description {
   height: 400px;
-  word-wrap: break-word;
-  word-break: break-all;
+  /* word-wrap: break-word; */
 }
 
 .closeCreateBtn {
-  width: 20%;
+  width: 40%;
 }

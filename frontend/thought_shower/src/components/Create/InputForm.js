@@ -48,7 +48,7 @@ function InputForm(props) {
           <form className='inputform' onSubmit={handleSubmit}>
             <div>
               <input
-                className="input"
+                className="f-input"
                 value={title}
                 type="text"
                 placeholder="Idea Name"
@@ -58,7 +58,7 @@ function InputForm(props) {
             </div>
             <div>
               <input
-                className="input"
+                className="f-input"
                 value={category}
                 type="text"
                 placeholder="Category"
@@ -68,7 +68,7 @@ function InputForm(props) {
             </div>
             <div>
               <textarea
-                className="input description"
+                className="f-input description"
                 value={post}
                 type="text"
                 placeholder="Description"

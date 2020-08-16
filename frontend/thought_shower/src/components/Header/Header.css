@@ -22,5 +22,5 @@
 
 .loginNav:hover {
     text-decoration: none;
-    opacity: 60%;
+    color: rgba(255, 255, 255, 0.6) !important;
 }
